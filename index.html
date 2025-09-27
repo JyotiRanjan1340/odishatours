@@ -5,15 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Odisha Tours | Premium Odisha Travel & Tour Packages</title>
   <meta name="description" content="Book Odisha travel packages, vehicle rentals, guides and more. Explore Odisha's top destinations with expert service.">
-  <meta name="keywords" content="Odisha tours, travel, Bhubaneswar, Puri, Konark, Chilika, vehicle rental, guide, tourism">
-  <meta name="author" content="Odisha Tours">
-  <meta property="og:title" content="Odisha Tours | Odisha's Best Travel and Tour Platform">
-  <meta property="og:description" content="Book Odisha tour packages, vehicles and guides. Best prices, local expertise, and memorable experiences.">
-  <meta property="og:image" content="images/ph1.jpg">
-  <meta property="og:url" content="https://jyotiranjan1340.github.io/odishatours/">
-  <meta property="og:type" content="website">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
     :root {
       --pearl-white: #F8F6F0;
@@ -26,8 +19,8 @@
       --muted: #E8EBF0;
       --box-shadow: 0 8px 32px rgba(33,143,108,0.08);
       --border-radius: 16px;
+      --nav-height: 70px;
     }
-
     body {
       margin: 0;
       font-family: 'Roboto', Arial, sans-serif;
@@ -36,28 +29,9 @@
       font-size: 1rem;
       line-height: 1.7;
       letter-spacing: 0;
+      overflow-x: hidden;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* SVG Logo */
-    .logo-svg {
-      height: 54px;
-      vertical-align: middle;
-      margin-right: 16px;
-    }
-    .logo-text {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--green);
-      font-family: 'Roboto', Arial, sans-serif;
-      vertical-align: middle;
-      display: inline-block;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
     /* Topbar */
     .topbar {
@@ -76,50 +50,87 @@
       gap: 2rem;
       box-shadow: var(--box-shadow);
       font-weight: 500;
-      letter-spacing: .5px;
     }
-    .topbar .top-contact a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color .2s;
-    }
-    .topbar .top-contact a:hover {
-      color: var(--gold);
-      text-decoration: underline;
-    }
+    .topbar .top-contact a { color: #fff; text-decoration: none; font-weight: 500; transition: color .2s; }
+    .topbar .top-contact a:hover { color: var(--gold); text-decoration: underline; }
 
     /* Header/Nav */
     header {
       background: var(--pearl-white);
       color: var(--green);
-      padding: 1.1rem 0;
       position: fixed;
       top: 38px;
+      left: 0;
       width: 100%;
       z-index: 1000;
       box-shadow: var(--box-shadow);
+      height: var(--nav-height);
     }
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: var(--nav-height);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: var(--nav-height);
+      justify-content: center;
+      margin-right: 16px;
+    }
+    .logo-area .logo-odisha {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 2px;
+      text-shadow: 1px 2px 6px rgba(33,143,108,0.08);
+      margin-bottom: -2px;
+      line-height: 1;
+    }
+    .logo-area .logo-tours {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-shadow: 0px 1px 4px rgba(212,175,55,0.10);
+      margin-top: 0;
+      line-height: 1;
+    }
+
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 1.2rem;
+      align-items: center;
+      height: var(--nav-height);
+      margin: 0;
+      padding: 0;
     }
     .nav-links a {
       color: var(--green);
       text-decoration: none;
       font-weight: 500;
       padding: .5rem 1rem;
-      border-radius: 25px;
+      border-radius: 22px;
       transition: .2s;
-      letter-spacing: 0.5px;
+      font-size: 1rem;
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      height: 38px;
+      display: flex;
+      align-items: center;
     }
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       background: var(--gold);
       color: var(--pearl-white);
     }
@@ -137,6 +148,7 @@
       gap: 8px;
       box-shadow: 0 2px 8px rgba(33,143,108,0.10);
       transition: .3s;
+      margin-left: 1rem;
     }
     .whatsapp-btn:hover {
       background: var(--green);
@@ -146,18 +158,60 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
+      margin-left: 1rem;
+      height: var(--nav-height);
+      justify-content: center;
+      align-items: flex-end;
     }
     .mobile-menu span {
-      width: 25px;
+      width: 28px;
       height: 3px;
       background: var(--green);
-      margin: 3px 0;
-      transition: .3s;
+      margin: 4px 0;
+      border-radius: 2px;
+      display: block;
+    }
+    /* Mobile bottom nav */
+    .bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: var(--pearl-white);
+      width: 100vw;
+      box-shadow: 0 -2px 18px rgba(33,143,108,0.10);
+      z-index: 1200;
+      padding: 0.35rem 0;
+      border-top: 2px solid var(--gold);
+    }
+    .bottom-nav-btns {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+    }
+    .bottom-nav-btns a {
+      color: var(--green);
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-decoration: none;
+      background: transparent;
+      border-radius: 18px;
+      padding: 8px 16px;
+      transition: .2s;
+      margin: 0 0.15rem;
+      outline: none;
+      border: none;
+    }
+    .bottom-nav-btns a.active,
+    .bottom-nav-btns a:active,
+    .bottom-nav-btns a:hover {
+      background: var(--gold);
+      color: var(--pearl-white);
     }
     main {
-      margin-top: 138px;
+      margin-top: calc(38px + var(--nav-height));
     }
-
     /* Hero */
     .hero-slider {
       position: relative;
@@ -165,23 +219,18 @@
       height: 70vh;
       min-height: 440px;
       overflow: hidden;
-      background: var(--green);
+      background: var(--background);
     }
     .hero-slide {
       position: absolute;
       width: 100%; height: 100%;
       background-size: cover;
-      background-position: center;
+      background-position: center center;
       opacity: 0;
-      transition: opacity .9s;
-    }
-    .hero-slide::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg,rgba(33,143,108,0.74) 60%,rgba(212,175,55,0.33) 100%);
-      z-index: 1;
-      pointer-events: none;
+      transition: opacity 1s;
+      z-index: 0;
+      transform: scale(1.08);
+      filter: brightness(0.93) contrast(1.08);
     }
     .hero-slide.active {
       opacity: 1;
@@ -193,8 +242,8 @@
       transform: translate(-50%, -50%);
       color: var(--pearl-white);
       text-align: center;
-      background: rgba(33,143,108,0.16);
-      padding: 2.5rem 3.5rem;
+      background: rgba(33,143,108,0.12);
+      padding: 2.2rem 3rem;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       z-index: 2;
@@ -208,14 +257,14 @@
       margin-bottom: 1rem;
       letter-spacing: 1px;
       color: var(--pearl-white);
-      text-shadow: 1px 2px 4px rgba(33,143,108,0.27);
+      text-shadow: 1px 2px 4px rgba(33,143,108,0.22);
     }
     .hero-content p {
       font-size: 1.18rem;
       font-weight: 400;
       margin-bottom: 2rem;
       color: var(--muted);
-      text-shadow: 1px 1px 2px rgba(33,143,108,0.18);
+      text-shadow: 1px 1px 2px rgba(33,143,108,0.16);
     }
     .cta-button {
       display: inline-block;
@@ -237,15 +286,57 @@
       border-color: var(--green);
       transform: scale(1.07);
     }
-
-    /* Section */
+    /* Welcome popup modal */
+    .welcome-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(34,58,94,0.14);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .welcome-modal-content {
+      background: var(--card-bg);
+      color: var(--green);
+      border-radius: 18px;
+      box-shadow: 0 8px 48px rgba(33,143,108,0.15);
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
+      text-align: center;
+      max-width: 380px;
+    }
+    .welcome-modal-content h2 {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+    }
+    .welcome-modal-content p {
+      color: var(--green);
+      font-size: 1.1rem;
+      margin-bottom: 2.2rem;
+    }
+    .welcome-modal-content button {
+      background: var(--green);
+      color: var(--pearl-white);
+      font-weight: 700;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 32px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .welcome-modal-content button:hover {
+      background: var(--gold);
+      color: var(--green);
+    }
+    /* Sections, cards, etc. as before */
     .section {
       padding: 4rem 0;
       background: var(--card-bg);
     }
-    .section:nth-child(even) {
-      background: var(--background);
-    }
+    .section:nth-child(even) { background: var(--background); }
     .section-title {
       text-align: center;
       font-size: 2.1rem;
@@ -255,326 +346,109 @@
       letter-spacing: 1px;
       text-shadow: 1px 2px 8px rgba(33,143,108,0.06);
     }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem; }
     .service-card {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      transition: .3s;
-      text-align: center;
-      border-top: 5px solid var(--gold);
-      color: var(--text-secondary);
+      background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);
+      transition: .3s; text-align: center; border-top: 5px solid var(--gold); color: var(--text-secondary);
     }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(33,143,108,0.12);
-    }
-    .service-icon {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-      color: var(--green);
-    }
-
-    /* Vehicles */
-    .vehicle-types {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(33,143,108,0.12); }
+    .service-icon { font-size: 2.4rem; margin-bottom: 1rem; color: var(--green); }
+    .vehicle-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 2rem; }
     .vehicle-card {
-      background: var(--green);
-      color: var(--pearl-white);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      text-align: center;
-      transition: .3s;
-      box-shadow: var(--box-shadow);
-      border: 2px solid var(--gold);
-      font-weight: 400;
+      background: var(--green); color: var(--pearl-white); padding: 2rem; border-radius: var(--border-radius); text-align: center;
+      transition: .3s; box-shadow: var(--box-shadow); border: 2px solid var(--gold); font-weight: 400;
     }
-    .vehicle-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 14px 28px rgba(33,143,108,0.13);
-      border-color: var(--pearl-white);
-    }
-
-    /* Destinations */
-    .destinations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 2.2rem;
-    }
+    .vehicle-card:hover { transform: scale(1.05); box-shadow: 0 14px 28px rgba(33,143,108,0.13); border-color: var(--pearl-white);}
+    .destinations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 2.2rem; }
     .destination-card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--box-shadow);
-      transition: .3s;
-      border-bottom: 3px solid var(--gold);
+      background: var(--card-bg); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow);
+      transition: .3s; border-bottom: 3px solid var(--gold);
     }
-    .destination-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(33,143,108,0.13);
-    }
+    .destination-card:hover { transform: translateY(-6px); box-shadow: 0 15px 40px rgba(33,143,108,0.13);}
     .destination-image {
-      height: 170px;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.3rem;
-      color: var(--gold);
+      height: 170px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 2.3rem; color: var(--gold);
     }
-    .destination-content {
-      padding: 1.1rem;
-      color: var(--text-secondary);
-    }
-
-    /* Gallery */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
+    .destination-content { padding: 1.1rem; color: var(--text-secondary);}
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; margin-top: 2rem;}
     .gallery-item {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(33,143,108,0.08);
-      transition: .3s;
-      background: var(--muted);
+      border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(33,143,108,0.08); transition: .3s; background: var(--muted);
     }
     .gallery-item img {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      transition: transform .3s;
-      filter: brightness(0.85) contrast(1.1);
+      width: 100%; height: 130px; object-fit: cover; transition: transform .3s; filter: brightness(0.85) contrast(1.1);
     }
-    .gallery-item:hover img {
-      transform: scale(1.05);
-      filter: brightness(0.95) contrast(1.05);
-    }
-
-    /* Blog */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+    .gallery-item:hover img { transform: scale(1.05); filter: brightness(0.95) contrast(1.05);}
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem;}
     .blog-card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      padding: 2rem;
-      transition: .3s;
-      display: flex;
-      flex-direction: column;
-      color: var(--text-secondary);
-      border-left: 5px solid var(--gold);
+      background: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 2rem;
+      transition: .3s; display: flex; flex-direction: column; color: var(--text-secondary); border-left: 5px solid var(--gold);
     }
     .blog-card h3 { margin-top: 0; }
-    .blog-card a {
-      color: var(--gold);
-      text-decoration: underline;
-      transition: color .2s;
-    }
-    .blog-card a:hover {
-      color: var(--green);
-    }
-
-    /* Pricing */
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 1.05rem;
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--box-shadow);
-    }
-    .pricing-table thead {
-      background: var(--green);
-      color: var(--pearl-white);
-    }
-    .pricing-table th, .pricing-table td {
-      padding: 1rem;
-      text-align: left;
-    }
-    .pricing-table tr:nth-child(even) {
-      background: var(--background);
-    }
-
-    /* FAQ */
-    .faq-list {
-      max-width: 800px;
-      margin: 2rem auto;
-      text-align: left;
-    }
-    .faq-item {
-      margin-bottom: 1.5rem;
-    }
+    .blog-card a { color: var(--gold); text-decoration: underline; transition: color .2s;}
+    .blog-card a:hover { color: var(--green);}
+    .pricing-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; background: var(--card-bg); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow);}
+    .pricing-table thead { background: var(--green); color: var(--pearl-white);}
+    .pricing-table th, .pricing-table td { padding: 1rem; text-align: left;}
+    .pricing-table tr:nth-child(even) { background: var(--background);}
+    .faq-list { max-width: 800px; margin: 2rem auto; text-align: left;}
+    .faq-item { margin-bottom: 1.5rem;}
     .faq-question {
-      font-weight: 700;
-      color: var(--gold);
-      cursor: pointer;
-      background: var(--background);
-      padding: .75rem 1rem;
-      border-radius: 8px;
-      box-shadow: var(--box-shadow);
-      transition: background .2s;
+      font-weight: 700; color: var(--gold); cursor: pointer; background: var(--background); padding: .75rem 1rem; border-radius: 8px; box-shadow: var(--box-shadow); transition: background .2s;
     }
-    .faq-question:hover {
-      background: var(--muted);
-    }
-    .faq-answer {
-      display: none;
-      padding: 1rem 1rem 1rem 1.7rem;
-      color: var(--text-secondary);
-    }
-
-    /* Booking */
+    .faq-question:hover { background: var(--muted);}
+    .faq-answer { display: none; padding: 1rem 1rem 1rem 1.7rem; color: var(--text-secondary);}
     .booking-form {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--text-secondary);
+      background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); max-width: 600px; margin: 0 auto; color: var(--text-secondary);
     }
-    .form-group {
-      margin-bottom: 1.3rem;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: .45rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
+    .form-group { margin-bottom: 1.3rem;}
+    .form-group label { display: block; margin-bottom: .45rem; font-weight: 700; color: var(--gold);}
     .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color .2s, box-shadow .2s;
-      background: var(--background);
-      color: var(--text-primary);
-      font-family: inherit;
+      width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; transition: border-color .2s, box-shadow .2s; background: var(--background); color: var(--text-primary); font-family: inherit;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(212,175,55,0.08);
-    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,175,55,0.08);}
     .submit-btn {
-      background: var(--green);
-      color: var(--gold);
-      padding: 15px 30px;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: .3s;
-      width: 100%;
-      box-shadow: var(--box-shadow);
-      border: 2px solid var(--gold);
-      letter-spacing: 1px;
+      background: var(--green); color: var(--gold); padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: .3s; width: 100%; box-shadow: var(--box-shadow); border: 2px solid var(--gold); letter-spacing: 1px;
     }
-    .submit-btn:hover {
-      background: var(--gold);
-      color: var(--green);
-      border-color: var(--green);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(212,175,55,0.08);
-    }
-
-    /* Testimonials */
-    .testimonials-slider {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
+    .submit-btn:hover { background: var(--gold); color: var(--green); border-color: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,175,55,0.08);}
+    .testimonials-slider { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;}
     .testimonial {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      text-align: center;
-      position: relative;
-      color: var(--text-secondary);
-      border-bottom: 4px solid var(--gold);
+      background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; position: relative; color: var(--text-secondary); border-bottom: 4px solid var(--gold);
     }
-    .testimonial::before {
-      content: '"';
-      position: absolute;
-      top: -10px; left: 20px;
-      font-size: 3rem;
-      color: var(--gold);
-      opacity: .23;
-    }
-
-    /* Footer */
+    .testimonial::before { content: '"'; position: absolute; top: -10px; left: 20px; font-size: 3rem; color: var(--gold); opacity: .23;}
     footer {
-      background: var(--green);
-      color: var(--pearl-white);
-      padding: 3rem 0 1rem;
+      background: var(--green); color: var(--pearl-white); padding: 3rem 0 1rem;
     }
     .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 2rem;
     }
-    .footer-section h3 {
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .footer-section a {
-      color: #ccc;
-      text-decoration: none;
-      transition: .2s;
-    }
-    .footer-section a:hover {
-      color: var(--gold);
-    }
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid #555;
-      opacity: .8;
-    }
-
-    /* Responsive */
+    .footer-section h3 { color: var(--gold); margin-bottom: 1rem;}
+    .footer-section a { color: #ccc; text-decoration: none; transition: .2s;}
+    .footer-section a:hover { color: var(--gold);}
+    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #555; opacity: .8;}
     @media (max-width:900px) {.container{padding:0 1rem;}}
     @media (max-width:768px){
       .topbar{font-size:.9rem;}
-      .nav-links{display:none}
-      .mobile-menu{display:flex}
+      nav{padding:0 .5rem;}
+      .nav-links{display:none;}
+      .mobile-menu{display:flex;}
       .hero-content h1{font-size:1.3rem;}
       .hero-content p{font-size:.9rem;}
       .section{padding:2.2rem 0;}
       .section-title{font-size:1.3rem;}
       .hero-content{padding:1rem;}
-      main{margin-top:160px;}
+      main{margin-top:calc(38px + var(--nav-height));}
+      .bottom-nav{display:block;}
     }
   </style>
 </head>
 <body>
+  <!-- Welcome Popup Modal -->
+  <div class="welcome-modal" id="welcomeModal">
+    <div class="welcome-modal-content">
+      <h2>Welcome to Odisha Tours!</h2>
+      <p>We are delighted to help you discover Odisha.<br>Click "Proceed" to explore our travel packages, vehicles, guides, and more.</p>
+      <button onclick="proceedWelcome()">Proceed</button>
+    </div>
+  </div>
   <!-- Topbar Contact Info -->
   <div class="topbar">
     <div class="top-contact">
@@ -584,24 +458,13 @@
   </div>
   <!-- Header/Nav -->
   <header>
-    <nav class="container">
-      <!-- SVG LOGO -->
-      <span>
-        <svg class="logo-svg" width="220" height="58" viewBox="0 0 220 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="220" height="58" rx="16" fill="#F8F6F0"/>
-          <g>
-            <circle cx="34" cy="29" r="18" fill="#218F6C" stroke="#D4AF37" stroke-width="3"/>
-            <rect x="26" y="10" width="16" height="16" rx="4" fill="#D4AF37" opacity="0.9"/>
-            <rect x="30" y="20" width="8" height="17" rx="2" fill="#F8F6F0"/>
-            <rect x="32" y="18" width="4" height="5" rx="1.5" fill="#218F6C"/>
-            <rect x="33" y="13" width="2" height="7" rx="1" fill="#D4AF37"/>
-            <rect x="34" y="9" width="1" height="3" rx="0.5" fill="#218F6C"/>
-            <text x="60" y="36" font-family="'Roboto', Arial, sans-serif" font-size="2.2rem" font-weight="700" fill="#218F6C" letter-spacing="2">Odisha Tours</text>
-          </g>
-        </svg>
+    <nav>
+      <span class="logo-area">
+        <span class="logo-odisha">Odisha</span>
+        <span class="logo-tours">Tours</span>
       </span>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
         <li><a href="#vehicles">Vehicles</a></li>
         <li><a href="#guides">Guides</a></li>
         <li><a href="#tours">Tours</a></li>
@@ -615,11 +478,26 @@
       <a class="whatsapp-btn" href="https://wa.me/917978426286" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show');">
+      <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileNav()">
         <span></span><span></span><span></span>
       </div>
     </nav>
   </header>
+  <!-- Bottom Navigation for Mobile -->
+  <nav class="bottom-nav" id="bottomNav">
+    <div class="bottom-nav-btns">
+      <a href="#home">Home</a>
+      <a href="#vehicles">Vehicles</a>
+      <a href="#guides">Guides</a>
+      <a href="#tours">Tours</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#blog">Blog</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#booking">Book</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
   <main>
     <!-- Hero Section with Auto Slider -->
     <div class="hero-slider" id="home">
@@ -635,7 +513,7 @@
         <a href="#booking" class="cta-button">Plan Your Trip</a>
       </div>
     </div>
-    <!-- Services -->
+    <!-- Services Section -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Our Premium Services</h2>
@@ -663,7 +541,7 @@
         </div>
       </div>
     </section>
-    <!-- Vehicles -->
+    <!-- Vehicles Section -->
     <section id="vehicles" class="section">
       <div class="container">
         <h2 class="section-title">Vehicle Rental Services</h2>
@@ -693,7 +571,7 @@
         </div>
       </div>
     </section>
-    <!-- Guides & Security -->
+    <!-- Guides & Security Section -->
     <section id="guides" class="section">
       <div class="container">
         <h2 class="section-title">Personal Guides & Security Services</h2>
@@ -716,7 +594,7 @@
         </div>
       </div>
     </section>
-    <!-- Tours -->
+    <!-- Tours Section -->
     <section id="tours" class="section">
       <div class="container">
         <h2 class="section-title">Popular Odisha Destinations</h2>
@@ -766,7 +644,7 @@
         </div>
       </div>
     </section>
-    <!-- Gallery -->
+    <!-- Gallery Section -->
     <section id="gallery" class="section">
       <div class="container">
         <h2 class="section-title">Photo Gallery</h2>
@@ -780,7 +658,7 @@
         </div>
       </div>
     </section>
-    <!-- Blog -->
+    <!-- Blog Section -->
     <section id="blog" class="section">
       <div class="container">
         <h2 class="section-title">Travel Blog & Tips</h2>
@@ -803,7 +681,7 @@
         </div>
       </div>
     </section>
-    <!-- Pricing Table -->
+    <!-- Pricing Section -->
     <section id="pricing" class="section">
       <div class="container">
         <h2 class="section-title">Tour & Vehicle Pricing</h2>
@@ -848,7 +726,7 @@
         <p style="margin-top:1.5rem;text-align:center;">*Prices are indicative. Contact us for latest rates & custom packages.</p>
       </div>
     </section>
-    <!-- FAQ -->
+    <!-- FAQ Section -->
     <section id="faq" class="section">
       <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
@@ -868,7 +746,7 @@
         </div>
       </div>
     </section>
-    <!-- Booking -->
+    <!-- Booking Section -->
     <section id="booking" class="section">
       <div class="container">
         <h2 class="section-title">Book Your Odisha Adventure</h2>
@@ -907,7 +785,7 @@
         </div>
       </div>
     </section>
-    <!-- Testimonials -->
+    <!-- Testimonials Section -->
     <section id="testimonials" class="section">
       <div class="container">
         <h2 class="section-title">What Our Travelers Say</h2>
@@ -918,7 +796,7 @@
         </div>
       </div>
     </section>
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Get in Touch</h2>
@@ -971,8 +849,16 @@
       &copy; <span id="yr"></span> Odisha Tours. All rights reserved.
     </div>
   </footer>
-  <!-- JS: Hero Slider + Footer Year + Smooth Scroll + FAQ + Quick Form -->
   <script>
+    // Welcome Modal
+    function proceedWelcome() {
+      document.getElementById('welcomeModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    window.onload = function() {
+      document.getElementById('welcomeModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    };
     // Hero Slider
     document.addEventListener('DOMContentLoaded', function() {
       let currentSlide = 0;
@@ -990,7 +876,7 @@
       showSlide(currentSlide);
       setInterval(nextSlide, 5000);
     });
-    // Set year in footer
+    // Footer Year
     document.getElementById('yr').textContent = new Date().getFullYear();
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
@@ -1025,6 +911,22 @@
         ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
       });
     });
+    // Mobile nav toggle
+    function toggleMobileNav() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+    // Highlight active section in nav (optional)
+    function highlightNavLinks() {
+      const links = document.querySelectorAll('.nav-links a, .bottom-nav-btns a');
+      links.forEach(link => {
+        link.classList.remove('active');
+        if(link.hash && window.location.hash && link.hash === window.location.hash) {
+          link.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('hashchange', highlightNavLinks);
+    document.addEventListener('DOMContentLoaded', highlightNavLinks);
   </script>
 </body>
 </html>
