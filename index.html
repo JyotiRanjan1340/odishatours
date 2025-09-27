@@ -82,50 +82,81 @@
             transition: 0.3s;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23FF6B35" width="1200" height="800"/><path fill="%23F7931E" d="M0,400 Q300,200 600,400 T1200,400 V800 H0 Z"/><circle fill="%23FFD700" cx="900" cy="150" r="80"/><polygon fill="%238B4513" points="200,600 400,400 600,600"/><ellipse fill="%230066CC" cx="300" cy="700" rx="150" ry="50"/></svg>');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
-        }
+        /* Hero Section with auto slider /
+.hero {
+position: relative;
+min-height: 100vh;
+display: flex;
+align-items: center;
+text-align: center;
+color: #fff;
+margin-top: 80px; / keep your original offset for fixed header /
+overflow: hidden; / hides slides while cross-fading */
+}
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            animation: fadeInUp 1s ease;
-        }
+.hero-slider {
+position: absolute;
+inset: 0; /* top:0; right:0; bottom:0; left:0 */
+}
 
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
+.hero-slide {
+position: absolute;
+inset: 0;
+background-size: cover;
+background-position: center;
+filter: brightness(0.65); /* darken for text readability */
+opacity: 0;
+transition: opacity 1s ease-in-out;
+will-change: opacity;
+}
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #FF6B35, #F7931E);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease 0.4s both;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
+.hero-slide.active {
+opacity: 1;
+}
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
+/* subtle overlay gradient for contrast */
+.hero::after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
+pointer-events: none;
+}
 
+.hero-content {
+position: relative;
+z-index: 2;
+}
+
+.hero-content h1 {
+font-size: 3.5rem;
+margin-bottom: 1rem;
+text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+font-size: 1.3rem;
+margin-bottom: 2rem;
+animation: fadeInUp 1s ease 0.2s both;
+}
+
+.cta-button {
+display: inline-block;
+background: linear-gradient(45deg, #FF6B35, #F7931E);
+color: white;
+padding: 15px 30px;
+text-decoration: none;
+border-radius: 50px;
+font-weight: bold;
+transition: all 0.3s ease;
+animation: fadeInUp 1s ease 0.4s both;
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.cta-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
         /* Sections */
         .section {
             padding: 5rem 0;
@@ -788,3 +819,4 @@
 
         const observer = new IntersectionObserver((entries) =>
 
+<script> (function(){ const slides = document.querySelectorAll('.hero-slide'); if (!slides.length) return; let i = 0; slides.classList.add('active'); setInterval(() => { slides[i].classList.remove('active'); i = (i + 1) % slides.length; slides[i].classList.add('active'); }, 5000); })(); </script>[1]
