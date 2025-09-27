@@ -32,8 +32,6 @@
       overflow-x: hidden;
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* Topbar */
     .topbar {
       width: 100%;
       background: var(--green);
@@ -53,8 +51,6 @@
     }
     .topbar .top-contact a { color: #fff; text-decoration: none; font-weight: 500; transition: color .2s; }
     .topbar .top-contact a:hover { color: var(--gold); text-decoration: underline; }
-
-    /* Header/Nav */
     header {
       background: var(--pearl-white);
       color: var(--green);
@@ -103,7 +99,6 @@
       margin-top: 0;
       line-height: 1;
     }
-
     .nav-links {
       display: flex;
       list-style: none;
@@ -171,7 +166,6 @@
       border-radius: 2px;
       display: block;
     }
-    /* Mobile bottom nav */
     .bottom-nav {
       display: none;
       position: fixed;
@@ -212,7 +206,6 @@
     main {
       margin-top: calc(38px + var(--nav-height));
     }
-    /* Hero */
     .hero-slider {
       position: relative;
       width: 100%;
@@ -242,29 +235,34 @@
       transform: translate(-50%, -50%);
       color: var(--pearl-white);
       text-align: center;
-      background: rgba(33,143,108,0.12);
+      background: rgba(255,255,255,0.93);
       padding: 2.2rem 3rem;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       z-index: 2;
       width: 80%;
       max-width: 640px;
-      backdrop-filter: blur(2px);
+      /* Remove blur for less odd look */
     }
     .hero-content h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #218F6C 0%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 4px 18px rgba(33,143,108,0.12), 0 0 2px #fff;
+      letter-spacing: 2px;
       margin-bottom: 1rem;
-      letter-spacing: 1px;
-      color: var(--pearl-white);
-      text-shadow: 1px 2px 4px rgba(33,143,108,0.22);
     }
     .hero-content p {
-      font-size: 1.18rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      color: var(--muted);
-      text-shadow: 1px 1px 2px rgba(33,143,108,0.16);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+      color: #213E32;
+      background: rgba(244,233,188,0.93);
+      padding: 10px 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 18px rgba(212,175,55,0.08);
     }
     .cta-button {
       display: inline-block;
@@ -286,7 +284,6 @@
       border-color: var(--green);
       transform: scale(1.07);
     }
-    /* Welcome popup modal */
     .welcome-modal {
       position: fixed;
       top: 0; left: 0;
@@ -330,6 +327,50 @@
     .welcome-modal-content button:hover {
       background: var(--gold);
       color: var(--green);
+    }
+    /* Thank you modal styles */
+    #thankYouModal {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100vw; height:100vh;
+      background:rgba(34,58,94,0.18);
+      z-index:2500;
+      justify-content:center;
+      align-items:center;
+    }
+    #thankYouModal .thank-content {
+      background:#fff;
+      color:#218F6C;
+      border-radius:22px;
+      box-shadow:0 8px 48px rgba(33,143,108,0.15);
+      padding:2.7rem 2.3rem;
+      text-align:center;
+      max-width:340px;
+      border: 3px solid #D4AF37;
+    }
+    #thankYouModal h2 {
+      color:#D4AF37;
+      margin-bottom:1rem;
+    }
+    #thankYouModal p {
+      font-size:1.15rem;
+    }
+    #thankYouModal button {
+      margin-top:2rem;
+      background:#218F6C;
+      color:#fff;
+      font-weight:700;
+      border:none;
+      border-radius:18px;
+      padding:13px 35px;
+      font-size:1.1rem;
+      cursor:pointer;
+      transition:.2s;
+    }
+    #thankYouModal button:hover {
+      background:#D4AF37;
+      color:#218F6C;
     }
     /* Sections, cards, etc. as before */
     .section {
@@ -402,16 +443,16 @@
     .form-group { margin-bottom: 1.3rem;}
     .form-group label { display: block; margin-bottom: .45rem; font-weight: 700; color: var(--gold);}
     .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; transition: border-color .2s, box-shadow .2s; background: var(--background); color: var(--text-primary); font-family: inherit;
+      width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; transition: border-color .2s, box-shadow .2s; background: var(--background); color: var(--text-primary);
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,175,55,0.08);}
     .submit-btn {
-      background: var(--green); color: var(--gold); padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: .3s; width: 100%; box-shadow: var(--box-shadow); border: 2px solid var(--gold); letter-spacing: 1px;
+      background: var(--green); color: var(--gold); padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: .3s; width: 100%; box-shadow: 0 2px 18px rgba(33,143,108,0.09);
     }
     .submit-btn:hover { background: var(--gold); color: var(--green); border-color: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,175,55,0.08);}
     .testimonials-slider { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;}
     .testimonial {
-      background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; position: relative; color: var(--text-secondary); border-bottom: 4px solid var(--gold);
+      background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; position: relative; color: var(--text-secondary); border-bottom: 5px solid var(--gold);
     }
     .testimonial::before { content: '"'; position: absolute; top: -10px; left: 20px; font-size: 3rem; color: var(--gold); opacity: .23;}
     footer {
@@ -447,6 +488,14 @@
       <h2>Welcome to Odisha Tours!</h2>
       <p>We are delighted to help you discover Odisha.<br>Click "Proceed" to explore our travel packages, vehicles, guides, and more.</p>
       <button onclick="proceedWelcome()">Proceed</button>
+    </div>
+  </div>
+  <!-- Thank You Modal (hidden by default) -->
+  <div id="thankYouModal">
+    <div class="thank-content">
+      <h2>Thank You for Visiting!</h2>
+      <p>We hope you enjoyed exploring Odisha Tours.<br>Have a wonderful journey!</p>
+      <button onclick="closeThankYou()">Close</button>
     </div>
   </div>
   <!-- Topbar Contact Info -->
@@ -859,6 +908,29 @@
       document.getElementById('welcomeModal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
     };
+    // Thank You Modal on Exit Intent
+    let thankYouShown = false;
+    function showThankYou() {
+      if (!thankYouShown) {
+        document.getElementById('thankYouModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        thankYouShown = true;
+      }
+    }
+    function closeThankYou() {
+      document.getElementById('thankYouModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    // Show when user tries to close the tab/window (exit intent)
+    window.addEventListener('beforeunload', function(e) {
+      showThankYou();
+    });
+    // Also show on mouseleave at top of window (exit intent, desktop)
+    document.addEventListener('mouseout', function(e) {
+      if (e.clientY < 0 || e.relatedTarget === null) {
+        showThankYou();
+      }
+    });
     // Hero Slider
     document.addEventListener('DOMContentLoaded', function() {
       let currentSlide = 0;
