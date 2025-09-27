@@ -206,6 +206,7 @@
     main {
       margin-top: calc(38px + var(--nav-height));
     }
+    /* Hero Section */
     .hero-slider {
       position: relative;
       width: 100%;
@@ -233,102 +234,58 @@
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      color: var(--pearl-white);
       text-align: center;
-      background: rgba(255,255,255,0.93);
+      background: transparent;
       padding: 2.2rem 3rem;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
       z-index: 2;
       width: 80%;
       max-width: 640px;
-      /* Remove blur for less odd look */
+      color: var(--green);
+      backdrop-filter: none;
     }
     .hero-content h1 {
       font-size: 2.8rem;
       font-weight: 800;
-      background: linear-gradient(90deg, #218F6C 0%, #D4AF37 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 4px 18px rgba(33,143,108,0.12), 0 0 2px #fff;
+      color: var(--green);
       letter-spacing: 2px;
       margin-bottom: 1rem;
+      text-shadow: 0 4px 18px rgba(33,143,108,0.15), 0 0 2px #fff;
+      font-family: 'Playfair Display', serif;
     }
     .hero-content p {
       font-size: 1.3rem;
       font-weight: 500;
       margin-bottom: 28px;
-      color: #213E32;
-      background: rgba(244,233,188,0.93);
-      padding: 10px 18px;
+      color: var(--green);
+      background: transparent;
+      padding: 6px 0;
       border-radius: 12px;
-      box-shadow: 0 2px 18px rgba(212,175,55,0.08);
+      box-shadow: none;
+      font-family: 'Poppins', sans-serif;
     }
     .cta-button {
       display: inline-block;
-      background: var(--green);
-      color: var(--gold);
+      background: var(--gold);
+      color: var(--green);
       padding: 15px 40px;
       border-radius: 30px;
       font-size: 1.1rem;
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 2px 8px rgba(33,143,108,0.09);
-      border: 2px solid var(--gold);
+      border: 2px solid var(--green);
       transition: .3s;
       letter-spacing: 1px;
     }
     .cta-button:hover {
-      background: var(--gold);
-      color: var(--green);
-      border-color: var(--green);
+      background: var(--green);
+      color: var(--gold);
+      border-color: var(--gold);
       transform: scale(1.07);
     }
-    .welcome-modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(34,58,94,0.14);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-    .welcome-modal-content {
-      background: var(--card-bg);
-      color: var(--green);
-      border-radius: 18px;
-      box-shadow: 0 8px 48px rgba(33,143,108,0.15);
-      padding: 2.5rem 2.5rem 2rem 2.5rem;
-      text-align: center;
-      max-width: 380px;
-    }
-    .welcome-modal-content h2 {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 1.1rem;
-    }
-    .welcome-modal-content p {
-      color: var(--green);
-      font-size: 1.1rem;
-      margin-bottom: 2.2rem;
-    }
-    .welcome-modal-content button {
-      background: var(--green);
-      color: var(--pearl-white);
-      font-weight: 700;
-      border: none;
-      border-radius: 25px;
-      padding: 12px 32px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: .2s;
-    }
-    .welcome-modal-content button:hover {
-      background: var(--gold);
-      color: var(--green);
-    }
-    /* Thank you modal styles */
+    /* Thank You Modal styles */
     #thankYouModal {
       display:none;
       position:fixed;
@@ -648,48 +605,39 @@
       <div class="container">
         <h2 class="section-title">Popular Odisha Destinations</h2>
         <div class="destinations-grid">
-          <div class="destination-card">
-            <div class="destination-image">🏛️</div>
-            <div class="destination-content">
-              <h3>Bhubaneswar</h3>
-              <p>Temple City: Lingaraj, Mukteshwar, Udayagiri caves and more.</p>
-            </div>
-          </div>
-          <div class="destination-card">
-            <div class="destination-image">🏖️</div>
-            <div class="destination-content">
-              <h3>Puri</h3>
-              <p>Jagannath Temple, golden beaches, vibrant festivals.</p>
-            </div>
-          </div>
-          <div class="destination-card">
-            <div class="destination-image">☀️</div>
-            <div class="destination-content">
-              <h3>Konark</h3>
-              <p>UNESCO Sun Temple—marvel of Kalinga architecture.</p>
-            </div>
-          </div>
-          <div class="destination-card">
-            <div class="destination-image">🐦</div>
-            <div class="destination-content">
-              <h3>Chilika Lake</h3>
-              <p>Irrawaddy dolphins, birds, scenic islands and boat rides.</p>
-            </div>
-          </div>
-          <div class="destination-card">
-            <div class="destination-image">🐅</div>
-            <div class="destination-content">
-              <h3>Similipal</h3>
-              <p>Tiger reserve: forests, waterfalls, tribal culture.</p>
-            </div>
-          </div>
-          <div class="destination-card">
-            <div class="destination-image">🏔️</div>
-            <div class="destination-content">
-              <h3>Eastern Ghats</h3>
-              <p>Daringbadi, Koraput, cool climate, valley views.</p>
-            </div>
-          </div>
+          <!-- 30+ districts, key picnic/tourist spots -->
+          <div class="destination-card"><div class="destination-image">🏛️</div><div class="destination-content"><h3>Khordha: Bhubaneswar</h3><p>Temple City with Lingaraj, Udayagiri caves, Khandagiri, museums.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏖️</div><div class="destination-content"><h3>Puri: Puri Beach & Jagannath Temple</h3><p>Golden beach, world-famous temple, vibrant festivals.</p></div></div>
+          <div class="destination-card"><div class="destination-image">☀️</div><div class="destination-content"><h3>Konark: Sun Temple</h3><p>UNESCO World Heritage marvel of Kalinga architecture.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🐦</div><div class="destination-content"><h3>Khurda: Chilika Lake</h3><p>Birds, dolphins, islands, boat rides, Asia’s largest brackish water lagoon.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🐅</div><div class="destination-content"><h3>Mayurbhanj: Similipal National Park</h3><p>Tiger reserve, waterfalls, forest, tribal culture.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏔️</div><div class="destination-content"><h3>Kandhamal: Daringbadi</h3><p>“Kashmir of Odisha”, pine forest, coffee garden, cool climate.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🌳</div><div class="destination-content"><h3>Koraput: Deomali Hill</h3><p>Odisha's highest peak, scenic valley, picnic spot and trekking.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏞️</div><div class="destination-content"><h3>Sundargarh: Khandadhar Waterfall</h3><p>One of India’s tallest waterfalls surrounded by lush forest.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🌊</div><div class="destination-content"><h3>Balasore: Chandipur Beach</h3><p>Unique sea recedes up to 5km, peaceful picnic and nature walks.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🐘</div><div class="destination-content"><h3>Angul: Satkosia Tiger Reserve</h3><p>River cruise, forest camp, wildlife, elephant sanctuary.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🪶</div><div class="destination-content"><h3>Kendrapara: Bhitarkanika National Park</h3><p>Mangrove forest, crocodiles, migratory birds, eco-tour.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏰</div><div class="destination-content"><h3>Ganjam: Taratarini Temple</h3><p>Hilltop shrine, scenic views, picnic and spiritual retreat.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🌿</div><div class="destination-content"><h3>Rayagada: Hanging Bridge at Chekaguda</h3><p>Suspension bridge, tribal village, river picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🦚</div><div class="destination-content"><h3>Nabarangpur: Sahid Park</h3><p>Green picnic spot and boating in the heart of Nabarangpur.</p></div></div>
+          <div class="destination-card"><div class="destination-image">💧</div><div class="destination-content"><h3>Kalahandi: Rabandhara Waterfall</h3><p>Hidden gem waterfall near Bhawanipatna, lush forest picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏕️</div><div class="destination-content"><h3>Nuapada: Sunabeda Wildlife Sanctuary</h3><p>Forests, picnic, rare flora, and trekking.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏞️</div><div class="destination-content"><h3>Bargarh: Debrigarh Wildlife Sanctuary</h3><p>Picnic, eco-tour, nature trails, Hirakud reservoir views.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🥭</div><div class="destination-content"><h3>Bhadrak: Dhamra & Chandbali</h3><p>River picnic, Dhamra Port, and mangrove boat rides.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🌴</div><div class="destination-content"><h3>Jajpur: Biraja Temple & Ratnagiri</h3><p>Ancient shakti temple, Buddhist ruins, family picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image">⛲</div><div class="destination-content"><h3>Dhenkanal: Kapilash Temple & Forest</h3><p>Hilltop forest, temple, picnic and trekking.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🕍</div><div class="destination-content"><h3>Jagatsinghpur: Paradeep Beach</h3><p>Port city beach, family picnic, fresh seafood.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🦜</div><div class="destination-content"><h3>Jharsuguda: Koilighugar Waterfall</h3><p>Beautiful waterfall, picnic, lush green surroundings.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏞️</div><div class="destination-content"><h3>Boudh: Boudh Raj Palace & River Picnic</h3><p>Historic palace, picnic by Mahanadi riverbank.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🌅</div><div class="destination-content"><h3>Subarnapur: Patali Srikhetra</h3><p>Hidden Jagannath temple, river picnic, rural beauty.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏜️</div><div class="destination-content"><h3>Sambalpur: Hirakud Dam & Reservoir</h3><p>Asia’s longest earthen dam, boating, birding, picnic spots.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🛕</div><div class="destination-content"><h3>Malkangiri: Satiguda & Chitrakonda</h3><p>Reservoir, boating, tribal culture, scenic picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🌲</div><div class="destination-content"><h3>Keonjhar: Gonasika & Sanaghagara Falls</h3><p>Hill picnic, waterfalls, forest trek, ancient temple.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏞️</div><div class="destination-content"><h3>Debagarh: Pradhanpat Waterfall</h3><p>Picturesque waterfall, picnic site, nature trail.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🦋</div><div class="destination-content"><h3>Balangir: Harishankar & Ranipur Jharial</h3><p>Scenic temple, forest, picnic, and Buddhist heritage.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🥥</div><div class="destination-content"><h3>Gajapati: Mahendragiri Hills</h3><p>Mythological hill, forest trek, panoramic picnic spot.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏜️</div><div class="destination-content"><h3>Rayagada: Chatikona Waterfall</h3><p>Hill picnic, tribal market, scenic waterfall.</p></div></div>
+          <div class="destination-card"><div class="destination-image">🏝️</div><div class="destination-content"><h3>Koraput: Gupteswar Cave & Temple</h3><p>Limestone cave, picnic spot, forest adventure.</p></div></div>
         </div>
       </div>
     </section>
@@ -842,6 +790,13 @@
           <div class="testimonial"><p>Amazing experience! The guide was knowledgeable and the vehicle was comfortable. Konark Sun Temple visit was unforgettable!</p><h4>- Priya Sharma, Mumbai</h4></div>
           <div class="testimonial"><p>Professional service from start to finish. Our Chilika Lake tour was perfectly organized with great bird watching opportunities.</p><h4>- Rajesh Kumar, Delhi</h4></div>
           <div class="testimonial"><p>The Urbania vehicle was luxurious and our security felt excellent throughout the Similipal adventure.</p><h4>- Ritesh Singh, Mumbai</h4></div>
+          <div class="testimonial"><p>We loved Daringbadi! The team arranged a magical picnic for our family. Highly recommended.</p><h4>- Sunita Rout, Cuttack</h4></div>
+          <div class="testimonial"><p>Our Bhitarkanika safari was thrilling. The guide knew every bird and crocodile spot!</p><h4>- Akash Mishra, Bhadrak</h4></div>
+          <div class="testimonial"><p>Best trip ever to Hirakud Dam. Well maintained vehicle and friendly staff.</p><h4>- Prabhat Sahu, Sambalpur</h4></div>
+          <div class="testimonial"><p>Our temple tour in Puri and Konark was smooth and spiritual. Great service!</p><h4>- Debasmita Das, Kolkata</h4></div>
+          <div class="testimonial"><p>Picnic at Sanaghagara Falls was wonderful, driver was punctual and polite.</p><h4>- Ajay Mohanty, Keonjhar</h4></div>
+          <div class="testimonial"><p>We explored Mahendragiri hills with Odisha Tours. Fantastic arrangements!</p><h4>- Binod Kumar, Vizag</h4></div>
+          <div class="testimonial"><p>The booking process is very simple. Will travel again!</p><h4>- Archana Patra, Rourkela</h4></div>
         </div>
       </div>
     </section>
@@ -921,15 +876,13 @@
       document.getElementById('thankYouModal').style.display = 'none';
       document.body.style.overflow = '';
     }
-    // Show when user tries to close the tab/window (exit intent)
+    // Show Thank You only on exit intent
     window.addEventListener('beforeunload', function(e) {
       showThankYou();
+      // To prevent default browser dialog, do not call preventDefault
     });
-    // Also show on mouseleave at top of window (exit intent, desktop)
-    document.addEventListener('mouseout', function(e) {
-      if (e.clientY < 0 || e.relatedTarget === null) {
-        showThankYou();
-      }
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0) showThankYou();
     });
     // Hero Slider
     document.addEventListener('DOMContentLoaded', function() {
