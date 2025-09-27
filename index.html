@@ -15,17 +15,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
   <style>
-    /* Color Palette */
     :root {
-      --primary: #223A5E;
-      --secondary: #3E5060;
-      --accent: #D4AF37;
-      --background: #F5F7FA;
+      --pearl-white: #F8F6F0;
+      --green: #218F6C;
+      --gold: #D4AF37;
+      --background: #F8F6F0;
       --card-bg: #fff;
-      --text-primary: #223A5E;
+      --text-primary: #213E32;
       --text-secondary: #3E5060;
       --muted: #E8EBF0;
-      --box-shadow: 0 8px 32px rgba(34,58,94,0.08);
+      --box-shadow: 0 8px 32px rgba(33,143,108,0.08);
       --border-radius: 16px;
     }
 
@@ -44,10 +43,26 @@
       padding: 0 1.5rem;
     }
 
+    /* SVG Logo */
+    .logo-svg {
+      height: 54px;
+      vertical-align: middle;
+      margin-right: 16px;
+    }
+    .logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green);
+      font-family: 'Roboto', Arial, sans-serif;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
     /* Topbar */
     .topbar {
       width: 100%;
-      background: var(--primary);
+      background: var(--green);
       color: #fff;
       padding: .5rem 0;
       font-size: 1rem;
@@ -70,14 +85,14 @@
       transition: color .2s;
     }
     .topbar .top-contact a:hover {
-      color: var(--accent);
+      color: var(--gold);
       text-decoration: underline;
     }
 
     /* Header/Nav */
     header {
-      background: var(--secondary);
-      color: #fff;
+      background: var(--pearl-white);
+      color: var(--green);
       padding: 1.1rem 0;
       position: fixed;
       top: 38px;
@@ -90,18 +105,13 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
     .nav-links {
       display: flex;
       list-style: none;
       gap: 2rem;
     }
     .nav-links a {
-      color: #fff;
+      color: var(--green);
       text-decoration: none;
       font-weight: 500;
       padding: .5rem 1rem;
@@ -110,12 +120,12 @@
       letter-spacing: 0.5px;
     }
     .nav-links a:hover {
-      background: var(--primary);
-      color: var(--accent);
+      background: var(--gold);
+      color: var(--pearl-white);
     }
     .whatsapp-btn {
-      background: var(--primary);
-      color: #fff;
+      background: var(--gold);
+      color: var(--green);
       border: none;
       border-radius: 25px;
       padding: 9px 20px;
@@ -125,12 +135,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 2px 8px rgba(34,58,94,0.10);
+      box-shadow: 0 2px 8px rgba(33,143,108,0.10);
       transition: .3s;
     }
     .whatsapp-btn:hover {
-      background: var(--accent);
-      color: var(--primary);
+      background: var(--green);
+      color: var(--gold);
     }
     .mobile-menu {
       display: none;
@@ -140,7 +150,7 @@
     .mobile-menu span {
       width: 25px;
       height: 3px;
-      background: #fff;
+      background: var(--green);
       margin: 3px 0;
       transition: .3s;
     }
@@ -155,7 +165,7 @@
       height: 70vh;
       min-height: 440px;
       overflow: hidden;
-      background: var(--primary);
+      background: var(--green);
     }
     .hero-slide {
       position: absolute;
@@ -169,7 +179,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg,rgba(34,58,94,0.74) 60%,rgba(62,80,96,0.83) 100%);
+      background: linear-gradient(120deg,rgba(33,143,108,0.74) 60%,rgba(212,175,55,0.33) 100%);
       z-index: 1;
       pointer-events: none;
     }
@@ -181,9 +191,9 @@
       position: absolute;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      color: #fff;
+      color: var(--pearl-white);
       text-align: center;
-      background: rgba(34,58,94,0.22);
+      background: rgba(33,143,108,0.16);
       padding: 2.5rem 3.5rem;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
@@ -197,34 +207,34 @@
       font-weight: 700;
       margin-bottom: 1rem;
       letter-spacing: 1px;
-      color: #F5F7FA;
-      text-shadow: 1px 2px 4px rgba(34,58,94,0.27);
+      color: var(--pearl-white);
+      text-shadow: 1px 2px 4px rgba(33,143,108,0.27);
     }
     .hero-content p {
       font-size: 1.18rem;
       font-weight: 400;
       margin-bottom: 2rem;
-      color: #E8EBF0;
-      text-shadow: 1px 1px 2px rgba(34,58,94,0.18);
+      color: var(--muted);
+      text-shadow: 1px 1px 2px rgba(33,143,108,0.18);
     }
     .cta-button {
       display: inline-block;
-      background: var(--primary);
-      color: var(--accent);
+      background: var(--green);
+      color: var(--gold);
       padding: 15px 40px;
       border-radius: 30px;
       font-size: 1.1rem;
       font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(34,58,94,0.09);
-      border: 2px solid var(--accent);
+      box-shadow: 0 2px 8px rgba(33,143,108,0.09);
+      border: 2px solid var(--gold);
       transition: .3s;
       letter-spacing: 1px;
     }
     .cta-button:hover {
-      background: var(--accent);
-      color: var(--primary);
-      border-color: var(--primary);
+      background: var(--gold);
+      color: var(--green);
+      border-color: var(--green);
       transform: scale(1.07);
     }
 
@@ -240,10 +250,10 @@
       text-align: center;
       font-size: 2.1rem;
       margin-bottom: 2.2rem;
-      color: var(--primary);
+      color: var(--green);
       font-weight: 700;
       letter-spacing: 1px;
-      text-shadow: 1px 2px 8px rgba(34,58,94,0.08);
+      text-shadow: 1px 2px 8px rgba(33,143,108,0.06);
     }
 
     /* Services */
@@ -260,17 +270,17 @@
       box-shadow: var(--box-shadow);
       transition: .3s;
       text-align: center;
-      border-top: 5px solid var(--accent);
+      border-top: 5px solid var(--gold);
       color: var(--text-secondary);
     }
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(34,58,94,0.12);
+      box-shadow: 0 16px 40px rgba(33,143,108,0.12);
     }
     .service-icon {
       font-size: 2.4rem;
       margin-bottom: 1rem;
-      color: var(--accent);
+      color: var(--green);
     }
 
     /* Vehicles */
@@ -281,20 +291,20 @@
       margin-top: 2rem;
     }
     .vehicle-card {
-      background: var(--primary);
-      color: #fff;
+      background: var(--green);
+      color: var(--pearl-white);
       padding: 2rem;
       border-radius: var(--border-radius);
       text-align: center;
       transition: .3s;
       box-shadow: var(--box-shadow);
-      border: 2px solid var(--accent);
+      border: 2px solid var(--gold);
       font-weight: 400;
     }
     .vehicle-card:hover {
       transform: scale(1.05);
-      box-shadow: 0 14px 28px rgba(34,58,94,0.13);
-      border-color: #fff;
+      box-shadow: 0 14px 28px rgba(33,143,108,0.13);
+      border-color: var(--pearl-white);
     }
 
     /* Destinations */
@@ -310,20 +320,20 @@
       overflow: hidden;
       box-shadow: var(--box-shadow);
       transition: .3s;
-      border-bottom: 3px solid var(--accent);
+      border-bottom: 3px solid var(--gold);
     }
     .destination-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(34,58,94,0.13);
+      box-shadow: 0 15px 40px rgba(33,143,108,0.13);
     }
     .destination-image {
       height: 170px;
-      background: var(--primary);
+      background: var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2.3rem;
-      color: var(--accent);
+      color: var(--gold);
     }
     .destination-content {
       padding: 1.1rem;
@@ -340,7 +350,7 @@
     .gallery-item {
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(34,58,94,0.08);
+      box-shadow: 0 4px 16px rgba(33,143,108,0.08);
       transition: .3s;
       background: var(--muted);
     }
@@ -372,16 +382,16 @@
       display: flex;
       flex-direction: column;
       color: var(--text-secondary);
-      border-left: 5px solid var(--accent);
+      border-left: 5px solid var(--gold);
     }
     .blog-card h3 { margin-top: 0; }
     .blog-card a {
-      color: var(--accent);
+      color: var(--gold);
       text-decoration: underline;
       transition: color .2s;
     }
     .blog-card a:hover {
-      color: var(--primary);
+      color: var(--green);
     }
 
     /* Pricing */
@@ -395,8 +405,8 @@
       box-shadow: var(--box-shadow);
     }
     .pricing-table thead {
-      background: var(--primary);
-      color: #fff;
+      background: var(--green);
+      color: var(--pearl-white);
     }
     .pricing-table th, .pricing-table td {
       padding: 1rem;
@@ -417,7 +427,7 @@
     }
     .faq-question {
       font-weight: 700;
-      color: var(--accent);
+      color: var(--gold);
       cursor: pointer;
       background: var(--background);
       padding: .75rem 1rem;
@@ -451,7 +461,7 @@
       display: block;
       margin-bottom: .45rem;
       font-weight: 700;
-      color: var(--accent);
+      color: var(--gold);
     }
     .form-group input, .form-group select, .form-group textarea {
       width: 100%;
@@ -466,12 +476,12 @@
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
       outline: none;
-      border-color: var(--accent);
+      border-color: var(--gold);
       box-shadow: 0 0 0 3px rgba(212,175,55,0.08);
     }
     .submit-btn {
-      background: var(--primary);
-      color: var(--accent);
+      background: var(--green);
+      color: var(--gold);
       padding: 15px 30px;
       border: none;
       border-radius: 50px;
@@ -481,13 +491,13 @@
       transition: .3s;
       width: 100%;
       box-shadow: var(--box-shadow);
-      border: 2px solid var(--accent);
+      border: 2px solid var(--gold);
       letter-spacing: 1px;
     }
     .submit-btn:hover {
-      background: var(--accent);
-      color: var(--primary);
-      border-color: var(--primary);
+      background: var(--gold);
+      color: var(--green);
+      border-color: var(--green);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(212,175,55,0.08);
     }
@@ -507,21 +517,21 @@
       text-align: center;
       position: relative;
       color: var(--text-secondary);
-      border-bottom: 4px solid var(--accent);
+      border-bottom: 4px solid var(--gold);
     }
     .testimonial::before {
       content: '"';
       position: absolute;
       top: -10px; left: 20px;
       font-size: 3rem;
-      color: var(--accent);
+      color: var(--gold);
       opacity: .23;
     }
 
     /* Footer */
     footer {
-      background: var(--secondary);
-      color: #fff;
+      background: var(--green);
+      color: var(--pearl-white);
       padding: 3rem 0 1rem;
     }
     .footer-content {
@@ -531,7 +541,7 @@
       margin-bottom: 2rem;
     }
     .footer-section h3 {
-      color: var(--accent);
+      color: var(--gold);
       margin-bottom: 1rem;
     }
     .footer-section a {
@@ -540,7 +550,7 @@
       transition: .2s;
     }
     .footer-section a:hover {
-      color: var(--accent);
+      color: var(--gold);
     }
     .footer-bottom {
       text-align: center;
@@ -575,7 +585,21 @@
   <!-- Header/Nav -->
   <header>
     <nav class="container">
-      <div class="logo">🏛️ Odisha Tours</div>
+      <!-- SVG LOGO -->
+      <span>
+        <svg class="logo-svg" width="220" height="58" viewBox="0 0 220 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="220" height="58" rx="16" fill="#F8F6F0"/>
+          <g>
+            <circle cx="34" cy="29" r="18" fill="#218F6C" stroke="#D4AF37" stroke-width="3"/>
+            <rect x="26" y="10" width="16" height="16" rx="4" fill="#D4AF37" opacity="0.9"/>
+            <rect x="30" y="20" width="8" height="17" rx="2" fill="#F8F6F0"/>
+            <rect x="32" y="18" width="4" height="5" rx="1.5" fill="#218F6C"/>
+            <rect x="33" y="13" width="2" height="7" rx="1" fill="#D4AF37"/>
+            <rect x="34" y="9" width="1" height="3" rx="0.5" fill="#218F6C"/>
+            <text x="60" y="36" font-family="'Roboto', Arial, sans-serif" font-size="2.2rem" font-weight="700" fill="#218F6C" letter-spacing="2">Odisha Tours</text>
+          </g>
+        </svg>
+      </span>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#vehicles">Vehicles</a></li>
