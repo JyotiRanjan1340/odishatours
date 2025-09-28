@@ -311,12 +311,12 @@
       top: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      background: rgba(0, 0, 0, 0.4) !important;
-      backdrop-filter: blur(10px);
+      background: transparent !important;
+      backdrop-filter: none !important;
       max-width: 410px;
       width: 95%;
       color: #ffffff;
-      box-shadow: 0 4px 24px rgba(33,143,108,0.09);
+      box-shadow: none;
       border-radius: var(--border-radius);
       z-index: 2;
       padding: 2rem;
@@ -325,7 +325,7 @@
       justify-content: flex-end;
       align-items: center;
       min-height: 340px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: none;
     }
     .hero-content h1 { 
       margin-top: 0; 
@@ -488,7 +488,11 @@
       }
       nav{padding:0 .5rem;}
       .nav-links{display:none;}
-      .whatsapp-btn {display: none;}
+      .whatsapp-btn {
+        display: flex;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
       .mobile-menu{display:flex;}
       .mobile-nav-dropdown {display: block;}
       .hero-content h1{font-size:1.3rem;}
