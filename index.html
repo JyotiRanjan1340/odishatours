@@ -238,7 +238,8 @@
       top: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      background: rgba(255,255,255,0.19);
+      background: none !important;
+      backdrop-filter: none !important;
       max-width: 410px;
       width: 95%;
       color: #218F6C;
@@ -246,7 +247,6 @@
       border-radius: var(--border-radius);
       z-index: 2;
       padding: 2rem;
-      backdrop-filter: blur(7px);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -352,14 +352,32 @@
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,175,55,0.08);}
     .submit-btn {
-      background: var(--green); color: var(--gold); padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: .3s; width: 100%; box-shadow: 0 2px 8px rgba(33,143,108,0.10);
+      background: var(--green); color: var(--gold); padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: .3s; width: 100%; box-shadow: 0 4px 16px rgba(33,143,108,0.10);
     }
     .submit-btn:hover { background: var(--gold); color: var(--green); border-color: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,175,55,0.08);}
     .testimonials-slider { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;}
     .testimonial {
-      background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; position: relative; color: var(--text-secondary); border-bottom: 4px solid var(--gold);
+      background: var(--card-bg); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; position: relative; color: var(--text-secondary); border-bottom: 3px solid var(--gold);
     }
     .testimonial::before { content: '"'; position: absolute; top: -10px; left: 20px; font-size: 3rem; color: var(--gold); opacity: .23;}
+    .welcome-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(33,143,108,0.18);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .welcome-modal-content {
+      background: #fff;
+      color: #218F6C;
+      padding: 2.5rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 12px 36px rgba(33,143,108,0.12);
+      text-align: center;
+      max-width: 350px;
+    }
     footer {
       background: var(--green); color: var(--pearl-white); padding: 3rem 0 1rem;
     }
@@ -414,6 +432,7 @@
         <li><a href="#vehicles">Vehicles</a></li>
         <li><a href="#guides">Guides</a></li>
         <li><a href="#tours">Tours</a></li>
+        <li><a href="#picnic-spots">Picnic Spots</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#pricing">Pricing</a></li>
@@ -436,6 +455,7 @@
       <a href="#vehicles">Vehicles</a>
       <a href="#guides">Guides</a>
       <a href="#tours">Tours</a>
+      <a href="#picnic-spots">Picnic Spots</a>
       <a href="#gallery">Gallery</a>
       <a href="#blog">Blog</a>
       <a href="#pricing">Pricing</a>
@@ -626,6 +646,43 @@
               <p>Treks, mythology, panoramic hilltop views.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- Picnic Spots Section -->
+    <section id="picnic-spots" class="section">
+      <div class="container">
+        <h2 class="section-title">Odisha District Picnic Spots</h2>
+        <div class="destinations-grid">
+          <!-- 30 districts cards -->
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/angul.jpg" alt="Satkosia"></div><div class="destination-content"><h3>Angul: Satkosia Gorge</h3><p>River views, forest picnic, crocodile sanctuary.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/balasore.jpg" alt="Chandipur"></div><div class="destination-content"><h3>Balasore: Chandipur Beach</h3><p>Sea that recedes, unique beach picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/baragarh.jpg" alt="Nrusinghanath"></div><div class="destination-content"><h3>Bargarh: Nrusinghanath Temple & Hills</h3><p>Picnic at foothill, waterfall, greenery.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/bhadrak.jpg" alt="Aruapalli"></div><div class="destination-content"><h3>Bhadrak: Aruapalli Picnic Spot</h3><p>River, forest, tranquil picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/bolangir.jpg" alt="Harishankar"></div><div class="destination-content"><h3>Balangir: Harishankar Falls</h3><p>Waterfall, hills, temple, serene picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/cuttack.jpg" alt="Deojhar"></div><div class="destination-content"><h3>Cuttack: Deojhar Waterfall</h3><p>Waterfall, jungle, near Naraj Barrage.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/deogarh.jpg" alt="Pradhanpat"></div><div class="destination-content"><h3>Deogarh: Pradhanpat Waterfall</h3><p>Freshwater fall, gardens, forest picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/dhenkanal.jpg" alt="Kapilash"></div><div class="destination-content"><h3>Dhenkanal: Kapilash Hills</h3><p>Hilltop temple, forest picnic spot.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/gajapati.jpg" alt="Mahendragiri"></div><div class="destination-content"><h3>Gajapati: Mahendragiri Hills</h3><p>Picnic, panoramic views, trekking.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/ganjam.jpg" alt="Tara Tarini"></div><div class="destination-content"><h3>Ganjam: Tara Tarini Hills</h3><p>Hilltop temple, river, picnic gardens.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/jagatsinghpur.jpg" alt="Paradeep"></div><div class="destination-content"><h3>Jagatsinghpur: Paradeep Beach</h3><p>Golden sand, picnic by the sea.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/jajpur.jpg" alt="Biraja"></div><div class="destination-content"><h3>Jajpur: Biraja Temple & River</h3><p>Temple, riverside picnic, historic ambience.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/jharsuguda.jpg" alt="Koilighugar"></div><div class="destination-content"><h3>Jharsuguda: Koilighugar Waterfall</h3><p>Waterfall, forest, perfect for family outing.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/kalahandi.jpg" alt="Rabandarh"></div><div class="destination-content"><h3>Kalahandi: Rabandarh Waterfall</h3><p>Scenic waterfall, peaceful picnic spot.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/kandhamal.jpg" alt="Daringbadi"></div><div class="destination-content"><h3>Kandhamal: Daringbadi</h3><p>Hill station, pine forest, picnic gardens.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/kendrapara.jpg" alt="Bhitarkanika"></div><div class="destination-content"><h3>Kendrapara: Bhitarkanika National Park</h3><p>Mangroves, riverside picnic, wildlife.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/kendujhar.jpg" alt="Sanaghagara"></div><div class="destination-content"><h3>Kendujhar: Sanaghagara Waterfall</h3><p>Waterfall, gardens, family picnic spot.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/khordha.jpg" alt="Chilika"></div><div class="destination-content"><h3>Khordha: Chilika Lake</h3><p>Birds, boating, lakeside picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/koraput.jpg" alt="Duduma"></div><div class="destination-content"><h3>Koraput: Duduma Waterfall</h3><p>Majestic falls, picnic with views.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/malkangiri.jpg" alt="Satiguda"></div><div class="destination-content"><h3>Malkangiri: Satiguda Dam</h3><p>Lake, gardens, serene picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/mayurbhanj.jpg" alt="Similipal"></div><div class="destination-content"><h3>Mayurbhanj: Similipal National Park</h3><p>Forest, waterfalls, eco-picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/nabarangpur.jpg" alt="Chandan Dhara"></div><div class="destination-content"><h3>Nabarangpur: Chandan Dhara</h3><p>Waterfall, green valley, peaceful picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/nayagarh.jpg" alt="Kuanria"></div><div class="destination-content"><h3>Nayagarh: Kuanria Dam</h3><p>Lake, picnic gardens, boating.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/puri.jpg" alt="Balighai"></div><div class="destination-content"><h3>Puri: Balighai Beach</h3><p>Casuarina groves, sea picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/rayagada.jpg" alt="Hatipathar"></div><div class="destination-content"><h3>Rayagada: Hatipathar Waterfall</h3><p>Rock formations, waterfalls, picnic spot.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/sambalpur.jpg" alt="Hirakud"></div><div class="destination-content"><h3>Sambalpur: Hirakud Dam</h3><p>Longest earthen dam, lakeside picnic.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/subarnapur.jpg" alt="Patali Srikhetra"></div><div class="destination-content"><h3>Subarnapur: Patali Srikhetra</h3><p>Temple, river banks, picnic spot.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/picnic/sundargarh.jpg" alt="Ghoghargarh"></div><div class="destination-content"><h3>Sundargarh: Ghoghargarh Waterfall</h3><p>Remote waterfall, forest picnic.</p></div></div>
         </div>
       </div>
     </section>
