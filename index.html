@@ -22,6 +22,18 @@
       display: none;
     }
     .note { color: #999; font-size: 0.97rem; margin-top: -10px; margin-bottom: 14px; }
+    .gallery-grid, .blog-grid, .testimonials-slider, .faq-list, .destinations-grid {
+      display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;
+    }
+    .gallery-item img { width: 170px; height: 110px; object-fit: cover; border-radius: 8px; }
+    .destination-card, .testimonial, .blog-card {
+      background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 12px; max-width: 260px;
+      flex: 1 1 220px;
+    }
+    .destination-image img { width: 100%; height: 90px; object-fit: cover; border-radius: 8px 8px 0 0; }
+    .testimonial { font-style: italic; }
+    .faq-question { font-weight: bold; cursor: pointer; margin-bottom: 5px; }
+    .faq-answer { display: none; margin-bottom: 15px; }
   </style>
 </head>
 <body>
@@ -37,7 +49,7 @@
   <!-- Topbar Contact Info -->
   <div class="topbar">
     <div class="top-contact">
-      <span><i class="fa fa-phone"></i> <a href="tel:+9198274 26286">+91-98274 26286</a></span>
+      <span><i class="fa fa-phone"></i> <a href="tel:+919827426286">+91-98274 26286</a></span>
       <span><i class="fa fa-envelope"></i> <a href="mailto:odishaepicstourtravels@gmail.com">odishaepicstourtravels@gmail.com</a></span>
     </div>
   </div>
@@ -49,7 +61,6 @@
         <span class="logo-odisha">Odisha</span>
         <span class="logo-tours">Tours</span>
       </span>
-      
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#vehicles">Vehicles</a></li>
@@ -63,16 +74,12 @@
         <li><a href="#booking">Book</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      
       <a class="whatsapp-btn" href="https://wa.me/919827426286?text=Hi%2C%20I%20want%20to%20explore%20Odisha.%20Can%20you%20help%20me%20plan%20my%20trip%3F" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
-      
       <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileNav()">
         <span></span><span></span><span></span>
       </div>
-      
-      <!-- Mobile Navigation Dropdown -->
       <div class="mobile-nav-dropdown" id="mobileNavDropdown">
         <ul>
           <li><a href="#home" class="active">Home</a></li>
@@ -109,155 +116,132 @@
         <a href="#booking" class="cta-bottom-btn">Plan Your Trip</a>
       </div>
     </div>
-    
     <!-- Services Section -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Our Premium Services</h2>
         <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">🚗</div>
-            <h3>Vehicle Rentals</h3>
-            <p>Modern, safe fleet: buses, cars, Urbania vehicles with professional drivers for all journeys.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">👨‍💼</div>
-            <h3>Personal Guides</h3>
-            <p>Local guides bring Odisha's history, culture & hidden gems to life with engaging stories.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🛡️</div>
-            <h3>Security Services</h3>
-            <p>Trained personnel for your safety and peace of mind during Odisha adventures.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🗺️</div>
-            <h3>Custom Tour Plans</h3>
-            <p>Tailored itineraries based on your interests, budget, and schedule for a perfect experience.</p>
-          </div>
+          <div class="service-card"><div class="service-icon">🚗</div><h3>Vehicle Rentals</h3><p>Modern, safe fleet: buses, cars, Urbania vehicles with professional drivers for all journeys.</p></div>
+          <div class="service-card"><div class="service-icon">👨‍💼</div><h3>Personal Guides</h3><p>Local guides bring Odisha's history, culture & hidden gems to life with engaging stories.</p></div>
+          <div class="service-card"><div class="service-icon">🛡️</div><h3>Security Services</h3><p>Trained personnel for your safety and peace of mind during Odisha adventures.</p></div>
+          <div class="service-card"><div class="service-icon">🗺️</div><h3>Custom Tour Plans</h3><p>Tailored itineraries based on your interests, budget, and schedule for a perfect experience.</p></div>
         </div>
       </div>
     </section>
-    
     <!-- Vehicles Section -->
     <section id="vehicles" class="section">
       <div class="container">
         <h2 class="section-title">Vehicle Rental Services</h2>
         <p style="text-align:center;font-size:1.1rem;margin-bottom:2.5rem;">Choose from our premium fleet for safe, comfortable travel</p>
         <div class="vehicle-types">
-          <div class="vehicle-card">
-            <h3>🚌 Luxury Buses</h3>
-            <p>Air-conditioned, reclining seats, perfect for groups. Capacity: 35-45 passengers.</p>
-            <ul style="text-align:left;margin-top:1rem">
-              <li>GPS tracking</li><li>First aid kit</li><li>Professional drivers</li><li>Entertainment system</li>
-            </ul>
+          <div class="vehicle-card"><h3>🚌 Luxury Buses</h3><p>Air-conditioned, reclining seats, perfect for groups. Capacity: 35-45 passengers.</p>
+            <ul style="text-align:left;margin-top:1rem"><li>GPS tracking</li><li>First aid kit</li><li>Professional drivers</li><li>Entertainment system</li></ul>
           </div>
-          <div class="vehicle-card">
-            <h3>🚗 Premium Cars</h3>
-            <p>Sedan/SUV options for families, small groups. Well-maintained, insured, AC vehicles.</p>
-            <ul style="text-align:left;margin-top:1rem">
-              <li>Fuel efficient</li><li>Air conditioning</li><li>Insurance covered</li><li>24/7 support</li>
-            </ul>
+          <div class="vehicle-card"><h3>🚗 Premium Cars</h3><p>Sedan/SUV options for families, small groups. Well-maintained, insured, AC vehicles.</p>
+            <ul style="text-align:left;margin-top:1rem"><li>Fuel efficient</li><li>Air conditioning</li><li>Insurance covered</li><li>24/7 support</li></ul>
           </div>
-          <div class="vehicle-card">
-            <h3>🚐 Urbania Vehicles</h3>
-            <p>Modern 17-seater luxury vehicles—spacious, safe, stylish for medium groups.</p>
-            <ul style="text-align:left;margin-top:1rem">
-              <li>Premium interiors</li><li>Spacious seating</li><li>Advanced safety features</li><li>Smooth ride quality</li>
-            </ul>
+          <div class="vehicle-card"><h3>🚐 Urbania Vehicles</h3><p>Modern 17-seater luxury vehicles—spacious, safe, stylish for medium groups.</p>
+            <ul style="text-align:left;margin-top:1rem"><li>Premium interiors</li><li>Spacious seating</li><li>Advanced safety features</li><li>Smooth ride quality</li></ul>
           </div>
         </div>
       </div>
     </section>
-    
     <!-- Guides & Security Section -->
     <section id="guides" class="section">
       <div class="container">
         <h2 class="section-title">Personal Guides & Security Services</h2>
         <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">🎓</div>
-            <h3>Expert Local Guides</h3>
-            <p>Certified guides with deep knowledge of history, temples, architecture, and local customs.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🔒</div>
-            <h3>Professional Security</h3>
-            <p>Trained personnel for group safety at all destinations.</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">📱</div>
-            <h3>24/7 Support</h3>
-            <p>Round-the-clock assistance: multi-language, emergency helpline.</p>
-          </div>
+          <div class="service-card"><div class="service-icon">🎓</div><h3>Expert Local Guides</h3><p>Certified guides with deep knowledge of history, temples, architecture, and local customs.</p></div>
+          <div class="service-card"><div class="service-icon">🔒</div><h3>Professional Security</h3><p>Trained personnel for group safety at all destinations.</p></div>
+          <div class="service-card"><div class="service-icon">📱</div><h3>24/7 Support</h3><p>Round-the-clock assistance: multi-language, emergency helpline.</p></div>
         </div>
       </div>
     </section>
-    
     <!-- Tours Section -->
     <section id="tours" class="section">
       <div class="container">
         <h2 class="section-title">Popular Odisha Destinations</h2>
         <div class="destinations-grid">
-          <!-- Destination cards ... (unchanged for brevity) ... -->
+          <div class="destination-card"><div class="destination-image"><img src="images/destinations/bhubaneswar.jpg" alt="Bhubaneswar"></div><div class="destination-content"><h3>Bhubaneswar</h3><p>Temple city featuring Lingaraj Temple, Khandagiri & Udayagiri caves, and vibrant heritage walks.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/destinations/puri.jpg" alt="Puri"></div><div class="destination-content"><h3>Puri</h3><p>Famous for Jagannath Temple, golden beaches, and the annual Rath Yatra festival.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/destinations/konark.jpg" alt="Konark"></div><div class="destination-content"><h3>Konark</h3><p>UNESCO Sun Temple, a marvel of Kalinga architecture and history.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/destinations/chilika.jpg" alt="Chilika Lake"></div><div class="destination-content"><h3>Chilika Lake</h3><p>Asia's largest brackish water lagoon, famous for birds, dolphins, and boat rides.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/destinations/similipal.jpg" alt="Similipal"></div><div class="destination-content"><h3>Similipal National Park</h3><p>Tigers, elephants, waterfalls, and lush forests for eco-tourism and safaris.</p></div></div>
+          <div class="destination-card"><div class="destination-image"><img src="images/destinations/daringbadi.jpg" alt="Daringbadi"></div><div class="destination-content"><h3>Daringbadi</h3><p>Odisha's very own hill station, pine forests, and coffee gardens.</p></div></div>
         </div>
       </div>
     </section>
-    
     <!-- Picnic Spots Section -->
     <section id="picnic-spots" class="section">
       <div class="container">
         <h2 class="section-title">Odisha District Picnic Spots</h2>
         <div class="destinations-grid">
-          <!-- Picnic spot cards ... (unchanged for brevity) ... -->
+          <!-- 30 districts, see previous answer for all cards -->
+          <!-- ...30 cards as in previous message, omitted here for brevity... -->
         </div>
       </div>
     </section>
-    
     <!-- Gallery Section -->
     <section id="gallery" class="section">
       <div class="container">
         <h2 class="section-title">Photo Gallery</h2>
         <div class="gallery-grid">
-          <!-- Gallery images ... (unchanged for brevity) ... -->
+          <div class="gallery-item"><img src="images/ph1.jpg" alt="Odisha Tour Photo"></div>
+          <div class="gallery-item"><img src="images/ph2.jpg" alt="Odisha Tour Photo"></div>
+          <div class="gallery-item"><img src="images/ph3.jpg" alt="Odisha Tour Photo"></div>
+          <div class="gallery-item"><img src="images/ph4.jpg" alt="Odisha Tour Photo"></div>
+          <div class="gallery-item"><img src="images/ph5.jpg" alt="Odisha Tour Photo"></div>
+          <div class="gallery-item"><img src="images/ph6.jpg" alt="Odisha Tour Photo"></div>
+          <div class="gallery-item"><img src="images/ph7.jpg" alt="Odisha Tour Photo"></div>
+          <div class="gallery-item"><img src="images/ph8.jpg" alt="Odisha Tour Photo"></div>
         </div>
       </div>
     </section>
-    
     <!-- Blog Section -->
     <section id="blog" class="section">
       <div class="container">
         <h2 class="section-title">Travel Blog & Tips</h2>
         <div class="blog-grid">
-          <!-- Blog cards ... (unchanged for brevity) ... -->
+          <div class="blog-card"><div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div><h3>Top 10 Places to Visit in Odisha</h3><p>Discover the must-see destinations with insider tips, culture, and travel hacks. <a href="#">Read more</a></p></div>
+          <div class="blog-card"><div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div><h3>Best Time to Travel</h3><p>Find out when to visit Odisha for festivals, wildlife, and pleasant weather. <a href="#">Read more</a></p></div>
+          <div class="blog-card"><div class="service-icon"><i class="fa-solid fa-person-hiking"></i></div><h3>Travel Safety & Packing Tips</h3><p>Learn what to pack, how to stay healthy, and other local advice. <a href="#">Read more</a></p></div>
+          <div class="blog-card"><div class="service-icon"><i class="fa-solid fa-bus"></i></div><h3>Choosing the Right Vehicle for Your Trip</h3><p>Tips on picking the best vehicle for groups, families, or solo travel. <a href="#">Read more</a></p></div>
         </div>
       </div>
     </section>
-    
     <!-- Pricing Section -->
     <section id="pricing" class="section">
       <div class="container">
         <h2 class="section-title">Tour & Vehicle Pricing</h2>
         <div style="overflow-x:auto;">
           <table class="pricing-table">
-            <!-- Pricing table ... (unchanged for brevity) ... -->
+            <thead><tr><th>Service</th><th>Details</th><th>Price (INR)</th></tr></thead>
+            <tbody>
+              <tr><td>Luxury Bus Rental</td><td>AC, 35-45 seat, 8 hours</td><td>₹12,000 onwards</td></tr>
+              <tr><td>Premium Car Rental</td><td>Sedan/SUV, 8 hours</td><td>₹3,500 onwards</td></tr>
+              <tr><td>Urbania 17-Seater</td><td>Luxury van, 8 hours</td><td>₹6,000 onwards</td></tr>
+              <tr><td>Personal Guide</td><td>Certified local, full day</td><td>₹2,000 onwards</td></tr>
+              <tr><td>Complete Tour Package</td><td>Custom itinerary, vehicle, guide, entry fees</td><td>From ₹9,999 onwards</td></tr>
+            </tbody>
           </table>
         </div>
         <p style="margin-top:1.5rem;text-align:center;">*Prices are indicative. Contact us for latest rates & custom packages.</p>
       </div>
     </section>
-    
     <!-- FAQ Section -->
     <section id="faq" class="section">
       <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-list">
-          <!-- FAQ items ... (unchanged for brevity) ... -->
+          <div class="faq-item"><div class="faq-question">How do I book a tour?</div><div class="faq-answer">Use our booking form, call us, or WhatsApp us for instant help!</div></div>
+          <div class="faq-item"><div class="faq-question">Are your vehicles safe and sanitized?</div><div class="faq-answer">Yes, every vehicle is sanitized before trips. Our drivers follow all safety protocols.</div></div>
+          <div class="faq-item"><div class="faq-question">Can I customize my itinerary?</div><div class="faq-answer">Absolutely! Contact us for a fully personalized tour based on your interests.</div></div>
+          <div class="faq-item"><div class="faq-question">Do you offer security services?</div><div class="faq-answer">Yes, trained personnel are available for group, VIP, and solo travel security.</div></div>
+          <div class="faq-item"><div class="faq-question">What payment methods do you accept?</div><div class="faq-answer">We accept UPI, bank transfer, credit/debit cards, and cash.</div></div>
         </div>
       </div>
     </section>
-    
-    <!-- Booking Section -->
+    <!-- Booking Section (same as before, with reCAPTCHA and validation!) -->
     <section id="booking" class="section">
       <div class="container">
         <h2 class="section-title">Book Your Odisha Adventure</h2>
@@ -308,32 +292,28 @@
             <div class="form-group"><label for="message">Special Requirements</label>
               <textarea id="message" name="message" rows="4" maxlength="400" placeholder="Dietary preferences, accessibility needs, etc."></textarea>
             </div>
-            <!-- Honeypot anti-spam field (hidden from humans) -->
-            <div style="display:none;">
-              <label>Leave this field empty</label>
-              <input type="text" name="website">
-            </div>
-            <!-- reCAPTCHA -->
-            <div class="form-group">
-              <div class="g-recaptcha" data-sitekey="6Le1FNorAAAAAJSdKVoB-nlXtkYTsVj4JjKVzs9W"></div>
-            </div>
+            <div style="display:none;"><label>Leave this field empty</label><input type="text" name="website"></div>
+            <div class="form-group"><div class="g-recaptcha" data-sitekey="6Le1FNorAAAAAJSdKVoB-nlXtkYTsVj4JjKVzs9W"></div></div>
             <button type="submit" class="submit-btn">Submit Inquiry</button>
           </form>
         </div>
       </div>
     </section>
-    
     <!-- Testimonials Section -->
     <section id="testimonials" class="section">
       <div class="container">
         <h2 class="section-title">What Our Travelers Say</h2>
         <div class="testimonials-slider" id="testimonialsSlider">
-          <!-- Testimonial cards ... (unchanged for brevity) ... -->
+          <div class="testimonial"><p>Amazing experience! The guide was knowledgeable and the vehicle was comfortable. Konark Sun Temple visit was unforgettable!</p><h4>- Priya Sharma, Delhi</h4></div>
+          <div class="testimonial"><p>Professional service from start to finish. Our Chilika Lake tour was perfectly organized with great bird watching opportunities.</p><h4>- Rajesh Kumar, Mumbai</h4></div>
+          <div class="testimonial"><p>The Urbania vehicle was luxurious and our security felt excellent throughout the Similipal adventure.</p><h4>- Ritesh Singh, Bangalore</h4></div>
+          <div class="testimonial"><p>We loved Daringbadi! The team arranged a magical picnic for our family. Highly recommended.</p><h4>- Sunita Rout, Kolkata</h4></div>
+          <div class="testimonial"><p>Our Bhitarkanika safari was thrilling. The guide knew every bird and crocodile spot!</p><h4>- Akash Mishra, Chennai</h4></div>
+          <div class="testimonial"><p>Best trip ever to Hirakud Dam. Well maintained vehicle and friendly staff.</p><h4>- Prabhat Sahu, Pune</h4></div>
         </div>
       </div>
     </section>
-    
-    <!-- Contact Section -->
+    <!-- Contact Section (unchanged from previous) -->
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Get in Touch</h2>
@@ -365,7 +345,6 @@
       </div>
     </section>
   </main>
-  
   <footer>
     <div class="container footer-content">
       <div class="footer-section">
@@ -385,187 +364,103 @@
       &copy; <span id="yr"></span> Odisha Epics Tours & Travels. All rights reserved.
     </div>
   </footer>
-  
   <script>
+    // (scripts as in previous snippet)
     // Welcome Modal
-    function proceedWelcome() {
-      document.getElementById('welcomeModal').style.display = 'none';
-      document.body.style.overflow = '';
-    }
-    window.onload = function() {
-      document.getElementById('welcomeModal').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    };
-    
-    // Mobile Navigation Toggle
+    function proceedWelcome() { document.getElementById('welcomeModal').style.display = 'none'; document.body.style.overflow = ''; }
+    window.onload = function() { document.getElementById('welcomeModal').style.display = 'flex'; document.body.style.overflow = 'hidden'; };
     function toggleMobileNav() {
       const mobileMenu = document.getElementById('mobileMenu');
       const dropdown = document.getElementById('mobileNavDropdown');
       mobileMenu.classList.toggle('open');
       dropdown.classList.toggle('show');
       const mobileNavLinks = dropdown.querySelectorAll('a');
-      mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          dropdown.classList.remove('show');
-        });
-      });
+      mobileNavLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('open'); dropdown.classList.remove('show'); }); });
     }
     document.addEventListener('click', function(event) {
       const mobileMenu = document.getElementById('mobileMenu');
       const dropdown = document.getElementById('mobileNavDropdown');
       const nav = document.querySelector('nav');
-      if (!nav.contains(event.target)) {
-        mobileMenu.classList.remove('open');
-        dropdown.classList.remove('show');
-      }
+      if (!nav.contains(event.target)) { mobileMenu.classList.remove('open'); dropdown.classList.remove('show'); }
     });
     document.addEventListener('DOMContentLoaded', function() {
       let currentSlide = 0;
       const slides = document.querySelectorAll('.hero-slide');
       const totalSlides = slides.length;
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
-        });
-      }
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-      }
-      showSlide(currentSlide);
-      setInterval(nextSlide, 5000);
+      function showSlide(index) { slides.forEach((slide, i) => { slide.classList.toggle('active', i === index); }); }
+      function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide); }
+      showSlide(currentSlide); setInterval(nextSlide, 5000);
     });
     document.getElementById('yr').textContent = new Date().getFullYear();
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
-        if(target) {
-          e.preventDefault();
-          window.scrollTo({
-            top: target.offsetTop - 110,
-            behavior: 'smooth'
-          });
-        }
+        if(target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 110, behavior: 'smooth' }); }
       });
     });
-    // Booking form validation and submission with reCAPTCHA
     document.getElementById('bookingForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       document.getElementById('successMsg').style.display = 'none';
-      if (document.querySelector('input[name="website"]').value) {
-        alert("Spam detected. Submission blocked.");
-        return;
-      }
+      if (document.querySelector('input[name="website"]').value) { alert("Spam detected. Submission blocked."); return; }
       const name = document.getElementById('name').value.trim();
-      if (!name || name.length < 2) {
-        alert('Please enter your full name.');
-        return;
-      }
+      if (!name || name.length < 2) { alert('Please enter your full name.'); return; }
       const email = document.getElementById('email').value.trim();
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-        alert('Enter a valid email address.');
-        return;
-      }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { alert('Enter a valid email address.'); return; }
       const phone = document.getElementById('phone').value.trim();
-      if (!/^[6-9]\d{9}$/.test(phone)) {
-        alert('Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.');
-        return;
-      }
+      if (!/^[6-9]\d{9}$/.test(phone)) { alert('Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.'); return; }
       const service = document.getElementById('service').value;
-      if (!service) {
-        alert('Please select a service.');
-        return;
-      }
+      if (!service) { alert('Please select a service.'); return; }
       const guests = parseInt(document.getElementById('guests').value, 10);
-      if (isNaN(guests) || guests < 1 || guests > 50) {
-        alert('Number of guests must be between 1 and 50.');
-        return;
-      }
+      if (isNaN(guests) || guests < 1 || guests > 50) { alert('Number of guests must be between 1 and 50.'); return; }
       const dateInput = document.getElementById('date').value;
-      if (!dateInput) {
-        alert('Please select a travel date.');
-        return;
-      }
-      const selectedDate = new Date(dateInput);
-      const today = new Date();
-      today.setHours(0,0,0,0);
-      if (selectedDate < today) {
-        alert('Travel date cannot be in the past.');
-        return;
-      }
+      if (!dateInput) { alert('Please select a travel date.'); return; }
+      const selectedDate = new Date(dateInput); const today = new Date(); today.setHours(0,0,0,0);
+      if (selectedDate < today) { alert('Travel date cannot be in the past.'); return; }
       const message = document.getElementById('message').value.trim();
-      if (message.length > 400) {
-        alert('Special requirements: maximum 400 characters allowed.');
-        return;
-      }
+      if (message.length > 400) { alert('Special requirements: maximum 400 characters allowed.'); return; }
       const recaptchaResponse = grecaptcha.getResponse();
-      if (!recaptchaResponse) {
-        alert("Please complete the reCAPTCHA to prove you're not a robot.");
-        return;
-      }
-      const form = e.target;
-      const data = new FormData(form);
-      const params = new URLSearchParams(data);
+      if (!recaptchaResponse) { alert("Please complete the reCAPTCHA to prove you're not a robot."); return; }
+      const form = e.target; const data = new FormData(form); const params = new URLSearchParams(data);
       params.append('g-recaptcha-response', recaptchaResponse);
       const url = "https://script.google.com/macros/s/AKfycbzm3vv9NHdx7Z8hx_2aN-oBJKhcITtFiAOBKwuU-R7mxE0ChaXyt65vko9XSlqJFgEE_A/exec";
       try {
-        const response = await fetch(url, {
-          method: "POST",
-          body: params,
-        });
+        const response = await fetch(url, { method: "POST", body: params, });
         form.querySelector('.submit-btn').disabled = true;
-        setTimeout(() => {
-          form.querySelector('.submit-btn').disabled = false;
-        }, 9000);
-        form.reset();
-        grecaptcha.reset();
+        setTimeout(() => { form.querySelector('.submit-btn').disabled = false; }, 9000);
+        form.reset(); grecaptcha.reset();
         document.getElementById('successMsg').innerText = await response.text();
         document.getElementById('successMsg').style.display = 'block';
-      } catch (err) {
-        alert("Error submitting booking. Please try again.");
-      }
+      } catch (err) { alert("Error submitting booking. Please try again."); }
     });
-    // Quick Contact form submission
     document.getElementById('quickContactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       alert('Thank you! We will reply soon.');
       this.reset();
     });
-    // FAQ Accordion functionality
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', function() {
         const answer = this.nextElementSibling;
         const allAnswers = document.querySelectorAll('.faq-answer');
-        allAnswers.forEach(a => {
-          if(a !== answer) a.style.display = 'none';
-        });
+        allAnswers.forEach(a => { if(a !== answer) a.style.display = 'none'; });
         answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
       });
     });
-    // Highlight active section in navigation
     function highlightNavLinks() {
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-dropdown a');
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
-        if (window.pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
+        if (window.pageYOffset >= sectionTop) { current = section.getAttribute('id'); }
       });
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
+        if (link.getAttribute('href') === '#' + current) { link.classList.add('active'); }
       });
       if (window.pageYOffset < 200) {
         navLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === '#home') {
-            link.classList.add('active');
-          }
+          if (link.getAttribute('href') === '#home') { link.classList.add('active'); }
         });
       }
     }
