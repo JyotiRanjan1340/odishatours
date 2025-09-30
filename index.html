@@ -313,7 +313,7 @@
         </div>
       </div>
     </section>
-    <!-- Contact Section (unchanged from previous) -->
+    <!-- Contact Section (updated, quick contact form removed) -->
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Get in Touch</h2>
@@ -321,23 +321,6 @@
           <div class="service-card"><div class="service-icon">📞</div><h3>Call Us</h3><p>+91-98274 26286</p></div>
           <div class="service-card"><div class="service-icon">✉️</div><h3>Email Us</h3><p>odishaepicstourtravels@gmail.com</p></div>
           <div class="service-card"><div class="service-icon">📍</div><h3>Visit Our Office</h3><p>ITER Jagamara<br>Bhubaneswar, Odisha 751019</p></div>
-        </div>
-        <div class="booking-form" style="margin-top:2rem;">
-          <form id="quickContactForm">
-            <div class="form-group">
-              <label for="qcname">Name</label>
-              <input id="qcname" name="qcname" required>
-            </div>
-            <div class="form-group">
-              <label for="qcemail">Email</label>
-              <input id="qcemail" name="qcemail" type="email" required>
-            </div>
-            <div class="form-group">
-              <label for="qcmsg">Your Message</label>
-              <textarea id="qcmsg" name="qcmsg" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
         </div>
         <div style="margin-top:2rem;text-align:center;">
           <iframe src="https://maps.google.com/maps?q=ITER%20Jagamara%2C%20Bhubaneswar%2C%20Odisha&t=&z=13&ie=UTF8&iwloc=&output=embed" width="90%" height="230" style="border-radius:15px;border:none;"></iframe>
@@ -365,7 +348,6 @@
     </div>
   </footer>
   <script>
-    // (scripts as in previous snippet)
     // Welcome Modal
     function proceedWelcome() { document.getElementById('welcomeModal').style.display = 'none'; document.body.style.overflow = ''; }
     window.onload = function() { document.getElementById('welcomeModal').style.display = 'flex'; document.body.style.overflow = 'hidden'; };
@@ -431,11 +413,6 @@
         document.getElementById('successMsg').innerText = await response.text();
         document.getElementById('successMsg').style.display = 'block';
       } catch (err) { alert("Error submitting booking. Please try again."); }
-    });
-    document.getElementById('quickContactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you! We will reply soon.');
-      this.reset();
     });
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', function() {
