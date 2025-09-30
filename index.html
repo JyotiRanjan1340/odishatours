@@ -3,26 +3,98 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Odisha Epics Tours Booking</title>
+  <title>Odisha Epics Tours | Explore Odisha's Wonders</title>
+  <meta name="description" content="Odisha Epics Tours - Vehicle rentals, guides, security, and full packages for Odisha's top tourist destinations. Book your Odisha trip today!">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet"/>
   <style>
-    body { font-family: 'Poppins', Arial, sans-serif; background: #f8f9fa; }
-    .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 18px #0001; }
-    h2 { text-align: center; color: #1976d2; margin-bottom: 24px; }
-    .form-group { margin-bottom: 18px; }
-    label { display: block; font-weight: 500; margin-bottom: 7px; }
-    input, select, textarea { width: 100%; padding: 9px; border: 1px solid #bbb; border-radius: 6px; font-size: 1rem; }
-    input:invalid, textarea:invalid, select:invalid { border-color: #f44336; }
+    body { font-family: 'Poppins', Arial, sans-serif; margin:0; background: #f7f9fc; color: #222; }
+    header { background: #1976d2; color: #fff; padding:32px 0 24px 0; text-align:center; }
+    header h1 { margin:0; font-size:2.2rem; font-weight:600; }
+    header p { font-size:1.15rem; margin-top:10px; }
+    nav { background:#fff; box-shadow: 0 1px 6px #0001; text-align:center; }
+    nav a { display:inline-block; color:#1976d2; text-decoration:none; font-weight:600; margin:0 18px; padding:16px 0; transition:.2s; }
+    nav a:hover { color:#145ea8; }
+    .container { max-width: 900px; margin:40px auto; background: #fff; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 18px #0001; }
+    .section-title { font-size: 1.5rem; color: #1976d2; margin-bottom: 18px; font-weight:600; }
+    .desc { font-size: 1.07rem; margin-bottom:24px; }
+    .features { display:flex; flex-wrap:wrap; gap:24px; margin-bottom:32px; }
+    .feature { background:#f2f6fb; border-radius:8px; flex:1 1 240px; min-width:240px; padding:18px 16px; }
+    .feature h3 { margin-top:0; color:#1976d2; font-size:1.13rem; }
+    .destinations { display:flex; flex-wrap:wrap; gap:18px; margin-bottom:32px; }
+    .destination { background:#e3ecfa; border-radius:8px; flex:1 1 160px; min-width:160px; padding:14px 12px; text-align:center; }
+    .destination h4 { margin:0 0 4px 0; color:#145ea8; font-size:1.06rem; }
+    .booking-form { margin-top:32px; }
+    .form-group { margin-bottom:18px; }
+    label { font-weight:500; margin-bottom:7px; display:block; }
+    input, select, textarea { width:100%; padding:9px; border: 1px solid #bbb; border-radius:6px; font-size:1rem; }
+    input:invalid, textarea:invalid, select:invalid { border-color:#f44336; }
     .submit-btn { background: #1976d2; color: #fff; font-weight: 600; border: none; padding: 11px 0; width: 100%; border-radius: 6px; font-size: 1.1rem; cursor: pointer; }
     .submit-btn:hover { background: #145ea8; }
     .note { color: #999; font-size: 0.97rem; margin-top: -10px; margin-bottom: 14px; }
+    .success-message { background:#d7ffd7; color:#145ea8; border-radius:8px; padding:18px; font-size:1.1rem; margin-bottom:20px; text-align:center; display:none; }
+    .footer { background:#1976d2; color:#fff; text-align:center; padding:24px 0 16px 0; margin-top:40px; }
+    .footer .social-links a { color:#fff; margin:0 10px; font-size:1.3rem; text-decoration:none; transition:.2s; }
+    .footer .social-links a:hover { color:#ffe082; }
+    @media(max-width:700px){
+      .container{padding:16px 4px;}
+      .features, .destinations{flex-direction:column;}
+    }
   </style>
   <!-- Google reCAPTCHA v2 -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <div class="container">
-    <h2>Book Your Odisha Tour</h2>
-    <form id="bookingForm" autocomplete="off" novalidate>
+  <header>
+    <h1>Odisha Epics Tours</h1>
+    <p>Discover Odisha's famous temples, scenic landscapes, and vibrant traditions with our expert travel services.</p>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#booking">Book Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="container" id="home">
+    <div class="section-title">Why Choose Odisha Epics Tours?</div>
+    <div class="desc">
+      Odisha Epics Tours is your trusted partner for exploring the wonders of Odisha. With our range of tailored travel services—including vehicle rentals, expert local guides, secure arrangements, and complete packages—we make every journey safe, memorable, and hassle-free.<br>
+      <br>
+      Our team’s deep knowledge of Odisha and commitment to customer satisfaction means personalized itineraries, reliable service, and transparent pricing. Whether it’s a spiritual temple tour, a wildlife adventure, or a relaxing retreat by the beach, we have you covered. <br>
+      <br>
+      <strong>Contact us today to plan your unforgettable Odisha adventure!</strong>
+    </div>
+    <div class="section-title" id="services">Our Services</div>
+    <div class="features">
+      <div class="feature">
+        <h3>Vehicle Rentals</h3>
+        <p>Comfortable cars, SUVs, and buses for city and outstation travel. Experienced drivers for secure journeys.</p>
+      </div>
+      <div class="feature">
+        <h3>Personal Guides</h3>
+        <p>Expert local guides for spiritual, historical, and nature tours. Multilingual options available.</p>
+      </div>
+      <div class="feature">
+        <h3>Security Services</h3>
+        <p>Professional security personnel for VIPs, families, and solo travelers. Peace of mind throughout your trip.</p>
+      </div>
+      <div class="feature">
+        <h3>Complete Packages</h3>
+        <p>Custom tour packages covering transport, stay, sightseeing, and more. Flexible to your needs and budget.</p>
+      </div>
+    </div>
+    <div class="section-title" id="destinations">Top Destinations</div>
+    <div class="destinations">
+      <div class="destination"><h4>Bhubaneswar</h4><span>Temples, museums, city life</span></div>
+      <div class="destination"><h4>Puri</h4><span>Jagannath Temple, beaches</span></div>
+      <div class="destination"><h4>Konark</h4><span>Sun Temple, heritage</span></div>
+      <div class="destination"><h4>Chilika Lake</h4><span>Birds, boat rides, scenic</span></div>
+      <div class="destination"><h4>Similipal</h4><span>Tigers, waterfalls, forest</span></div>
+      <div class="destination"><h4>Custom Itinerary</h4><span>Design your own adventure</span></div>
+    </div>
+    <div class="section-title" id="booking">Book Your Odisha Tour</div>
+    <div class="success-message" id="successMsg"></div>
+    <form id="bookingForm" class="booking-form" autocomplete="off" novalidate>
       <div class="form-group">
         <label for="name">Full Name *</label>
         <input id="name" name="name" required minlength="2" maxlength="80" pattern=".{2,}" autocomplete="off">
@@ -84,11 +156,32 @@
       </div>
       <button type="submit" class="submit-btn">Submit Inquiry</button>
     </form>
+    <div id="contact" style="margin-top:42px;">
+      <div class="section-title">Contact Us</div>
+      <div style="font-size:1.07rem;">
+        <b>Email:</b> <a href="mailto:odishaepicstours@gmail.com">odishaepicstours@gmail.com</a><br>
+        <b>Phone:</b> <a href="tel:+917894498280">+91 78944 98280</a><br>
+        <b>WhatsApp:</b> <a href="https://wa.me/917894498280" target="_blank">Chat on WhatsApp</a><br>
+        <b>Address:</b> Bhubaneswar, Odisha, India
+      </div>
+    </div>
   </div>
-
+  <div class="footer">
+    <div class="social-links">
+      <a href="https://wa.me/917894498280" title="WhatsApp" target="_blank">&#128241;</a>
+      <a href="mailto:odishaepicstours@gmail.com" title="Email">&#9993;</a>
+      <a href="https://www.facebook.com/" title="Facebook" target="_blank">&#128100;</a>
+      <a href="https://www.instagram.com/" title="Instagram" target="_blank">&#128248;</a>
+      <a href="https://www.youtube.com/" title="YouTube" target="_blank">&#127916;</a>
+    </div>
+    <div style="margin-top:8px; font-size:0.98rem;">
+      &copy; 2025 Odisha Epics Tours. All rights reserved.
+    </div>
+  </div>
   <script>
     document.getElementById('bookingForm').addEventListener('submit', async function(e) {
       e.preventDefault();
+      document.getElementById('successMsg').style.display = 'none';
 
       // Honeypot anti-spam check: if filled, block submission
       if (document.querySelector('input[name="website"]').value) {
@@ -176,7 +269,8 @@
         }, 9000);
         form.reset();
         grecaptcha.reset();
-        alert(await response.text());
+        document.getElementById('successMsg').innerText = await response.text();
+        document.getElementById('successMsg').style.display = 'block';
       } catch (err) {
         alert("Error submitting booking. Please try again.");
       }
