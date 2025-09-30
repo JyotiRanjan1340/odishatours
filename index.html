@@ -16,6 +16,8 @@
     .submit-btn:hover { background: #145ea8; }
     .note { color: #999; font-size: 0.97rem; margin-top: -10px; margin-bottom: 14px; }
   </style>
+  <!-- Google reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   <div class="container">
@@ -76,12 +78,15 @@
         <label>Leave this field empty</label>
         <input type="text" name="website">
       </div>
+      <!-- reCAPTCHA -->
+      <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="6Le1FNorAAAAAJSdKVoB-nlXtkYTsVj4JjKVzs9W"></div>
+      </div>
       <button type="submit" class="submit-btn">Submit Inquiry</button>
     </form>
   </div>
 
   <script>
-    // Anti-spam: honeypot and JS validation
     document.getElementById('bookingForm').addEventListener('submit', async function(e) {
       e.preventDefault();
 
@@ -147,22 +152,30 @@
         return;
       }
 
+      // reCAPTCHA validation
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        alert("Please complete the reCAPTCHA to prove you're not a robot.");
+        return;
+      }
+
       // All validations passed. Submit to Apps Script
       const form = e.target;
       const data = new FormData(form);
       const params = new URLSearchParams(data);
+      params.append('g-recaptcha-response', recaptchaResponse);
       const url = "https://script.google.com/macros/s/AKfycbzm3vv9NHdx7Z8hx_2aN-oBJKhcITtFiAOBKwuU-R7mxE0ChaXyt65vko9XSlqJFgEE_A/exec";
       try {
         const response = await fetch(url, {
           method: "POST",
           body: params,
         });
-        // Anti-spam: block duplicate rapid submissions
         form.querySelector('.submit-btn').disabled = true;
         setTimeout(() => {
           form.querySelector('.submit-btn').disabled = false;
         }, 9000);
         form.reset();
+        grecaptcha.reset();
         alert(await response.text());
       } catch (err) {
         alert("Error submitting booking. Please try again.");
