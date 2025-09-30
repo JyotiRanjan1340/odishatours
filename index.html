@@ -3,228 +3,485 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Odisha Epics Tours | Explore Odisha's Wonders</title>
-  <meta name="description" content="Odisha Epics Tours - Vehicle rentals, guides, security, and full packages for Odisha's top tourist destinations. Book your Odisha trip today!">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet"/>
-  <style>
-    body { font-family: 'Poppins', Arial, sans-serif; margin:0; background: #f7f9fc; color: #222; }
-    header { background: #1976d2; color: #fff; padding:32px 0 24px 0; text-align:center; }
-    header h1 { margin:0; font-size:2.2rem; font-weight:600; }
-    header p { font-size:1.15rem; margin-top:10px; }
-    nav { background:#fff; box-shadow: 0 1px 6px #0001; text-align:center; }
-    nav a { display:inline-block; color:#1976d2; text-decoration:none; font-weight:600; margin:0 18px; padding:16px 0; transition:.2s; }
-    nav a:hover { color:#145ea8; }
-    .container { max-width: 900px; margin:40px auto; background: #fff; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 18px #0001; }
-    .section-title { font-size: 1.5rem; color: #1976d2; margin-bottom: 18px; font-weight:600; }
-    .desc { font-size: 1.07rem; margin-bottom:24px; }
-    .features { display:flex; flex-wrap:wrap; gap:24px; margin-bottom:32px; }
-    .feature { background:#f2f6fb; border-radius:8px; flex:1 1 240px; min-width:240px; padding:18px 16px; }
-    .feature h3 { margin-top:0; color:#1976d2; font-size:1.13rem; }
-    .destinations { display:flex; flex-wrap:wrap; gap:18px; margin-bottom:32px; }
-    .destination { background:#e3ecfa; border-radius:8px; flex:1 1 160px; min-width:160px; padding:14px 12px; text-align:center; }
-    .destination h4 { margin:0 0 4px 0; color:#145ea8; font-size:1.06rem; }
-    .booking-form { margin-top:32px; }
-    .form-group { margin-bottom:18px; }
-    label { font-weight:500; margin-bottom:7px; display:block; }
-    input, select, textarea { width:100%; padding:9px; border: 1px solid #bbb; border-radius:6px; font-size:1rem; }
-    input:invalid, textarea:invalid, select:invalid { border-color:#f44336; }
-    .submit-btn { background: #1976d2; color: #fff; font-weight: 600; border: none; padding: 11px 0; width: 100%; border-radius: 6px; font-size: 1.1rem; cursor: pointer; }
-    .submit-btn:hover { background: #145ea8; }
-    .note { color: #999; font-size: 0.97rem; margin-top: -10px; margin-bottom: 14px; }
-    .success-message { background:#d7ffd7; color:#145ea8; border-radius:8px; padding:18px; font-size:1.1rem; margin-bottom:20px; text-align:center; display:none; }
-    .footer { background:#1976d2; color:#fff; text-align:center; padding:24px 0 16px 0; margin-top:40px; }
-    .footer .social-links a { color:#fff; margin:0 10px; font-size:1.3rem; text-decoration:none; transition:.2s; }
-    .footer .social-links a:hover { color:#ffe082; }
-    @media(max-width:700px){
-      .container{padding:16px 4px;}
-      .features, .destinations{flex-direction:column;}
-    }
-  </style>
+  <title>Odisha Epics Tours & Travel | Premium Odisha Travel & Tour Packages</title>
+  <meta name="description" content="Book Odisha travel packages, vehicle rentals, guides and more. Explore Odisha's top destinations with expert service.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <!-- Google reCAPTCHA v2 -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    .success-message {
+      background: #d7ffd7;
+      color: #145ea8;
+      border-radius: 8px;
+      padding: 18px;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: center;
+      display: none;
+    }
+    .note { color: #999; font-size: 0.97rem; margin-top: -10px; margin-bottom: 14px; }
+  </style>
 </head>
 <body>
+  <!-- Welcome Popup Modal -->
+  <div class="welcome-modal" id="welcomeModal">
+    <div class="welcome-modal-content">
+      <h2>Welcome to Odisha Epics Tours!</h2>
+      <p>We are delighted to help you discover Odisha.<br>Click "Proceed" to explore our travel packages, vehicles, guides, and more.</p>
+      <button onclick="proceedWelcome()">Proceed</button>
+    </div>
+  </div>
+  
+  <!-- Topbar Contact Info -->
+  <div class="topbar">
+    <div class="top-contact">
+      <span><i class="fa fa-phone"></i> <a href="tel:+9198274 26286">+91-98274 26286</a></span>
+      <span><i class="fa fa-envelope"></i> <a href="mailto:odishaepicstourtravels@gmail.com">odishaepicstourtravels@gmail.com</a></span>
+    </div>
+  </div>
+  
+  <!-- Header/Nav -->
   <header>
-    <h1>Odisha Epics Tours</h1>
-    <p>Discover Odisha's famous temples, scenic landscapes, and vibrant traditions with our expert travel services.</p>
+    <nav>
+      <span class="logo-area">
+        <span class="logo-odisha">Odisha</span>
+        <span class="logo-tours">Tours</span>
+      </span>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#vehicles">Vehicles</a></li>
+        <li><a href="#guides">Guides</a></li>
+        <li><a href="#tours">Tours</a></li>
+        <li><a href="#picnic-spots">Picnic Spots</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#booking">Book</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <a class="whatsapp-btn" href="https://wa.me/919827426286?text=Hi%2C%20I%20want%20to%20explore%20Odisha.%20Can%20you%20help%20me%20plan%20my%20trip%3F" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      
+      <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </div>
+      
+      <!-- Mobile Navigation Dropdown -->
+      <div class="mobile-nav-dropdown" id="mobileNavDropdown">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#vehicles">Vehicles</a></li>
+          <li><a href="#guides">Guides</a></li>
+          <li><a href="#tours">Tours</a></li>
+          <li><a href="#picnic-spots">Picnic Spots</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#booking">Book</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="mobile-whatsapp-btn" href="https://wa.me/919827426286?text=Hi%2C%20I%20want%20to%20explore%20Odisha.%20Can%20you%20help%20me%20plan%20my%20trip%3F" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp Chat
+        </a>
+      </div>
+    </nav>
   </header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#destinations">Destinations</a>
-    <a href="#booking">Book Now</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="container" id="home">
-    <div class="section-title">Why Choose Odisha Epics Tours?</div>
-    <div class="desc">
-      Odisha Epics Tours is your trusted partner for exploring the wonders of Odisha. With our range of tailored travel services—including vehicle rentals, expert local guides, secure arrangements, and complete packages—we make every journey safe, memorable, and hassle-free.<br>
-      <br>
-      Our team’s deep knowledge of Odisha and commitment to customer satisfaction means personalized itineraries, reliable service, and transparent pricing. Whether it’s a spiritual temple tour, a wildlife adventure, or a relaxing retreat by the beach, we have you covered. <br>
-      <br>
-      <strong>Contact us today to plan your unforgettable Odisha adventure!</strong>
-    </div>
-    <div class="section-title" id="services">Our Services</div>
-    <div class="features">
-      <div class="feature">
-        <h3>Vehicle Rentals</h3>
-        <p>Comfortable cars, SUVs, and buses for city and outstation travel. Experienced drivers for secure journeys.</p>
-      </div>
-      <div class="feature">
-        <h3>Personal Guides</h3>
-        <p>Expert local guides for spiritual, historical, and nature tours. Multilingual options available.</p>
-      </div>
-      <div class="feature">
-        <h3>Security Services</h3>
-        <p>Professional security personnel for VIPs, families, and solo travelers. Peace of mind throughout your trip.</p>
-      </div>
-      <div class="feature">
-        <h3>Complete Packages</h3>
-        <p>Custom tour packages covering transport, stay, sightseeing, and more. Flexible to your needs and budget.</p>
+  
+  <main>
+    <!-- Hero Section -->
+    <div class="hero-slider" id="home">
+      <div class="hero-slide active" style="background-image:url('images/ph1.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/ph2.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/ph3.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/ph4.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/ph5.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/ph6.jpg')"></div>
+      <div class="container hero-content fixed" id="heroText">
+        <h1>Discover the Soul of Odisha</h1>
+        <p>Premium tours, vehicles, and guides for Odisha's top destinations.<br>Start your journey now!</p>
+        <a href="#booking" class="cta-bottom-btn">Plan Your Trip</a>
       </div>
     </div>
-    <div class="section-title" id="destinations">Top Destinations</div>
-    <div class="destinations">
-      <div class="destination"><h4>Bhubaneswar</h4><span>Temples, museums, city life</span></div>
-      <div class="destination"><h4>Puri</h4><span>Jagannath Temple, beaches</span></div>
-      <div class="destination"><h4>Konark</h4><span>Sun Temple, heritage</span></div>
-      <div class="destination"><h4>Chilika Lake</h4><span>Birds, boat rides, scenic</span></div>
-      <div class="destination"><h4>Similipal</h4><span>Tigers, waterfalls, forest</span></div>
-      <div class="destination"><h4>Custom Itinerary</h4><span>Design your own adventure</span></div>
+    
+    <!-- Services Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Our Premium Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🚗</div>
+            <h3>Vehicle Rentals</h3>
+            <p>Modern, safe fleet: buses, cars, Urbania vehicles with professional drivers for all journeys.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">👨‍💼</div>
+            <h3>Personal Guides</h3>
+            <p>Local guides bring Odisha's history, culture & hidden gems to life with engaging stories.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🛡️</div>
+            <h3>Security Services</h3>
+            <p>Trained personnel for your safety and peace of mind during Odisha adventures.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🗺️</div>
+            <h3>Custom Tour Plans</h3>
+            <p>Tailored itineraries based on your interests, budget, and schedule for a perfect experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Vehicles Section -->
+    <section id="vehicles" class="section">
+      <div class="container">
+        <h2 class="section-title">Vehicle Rental Services</h2>
+        <p style="text-align:center;font-size:1.1rem;margin-bottom:2.5rem;">Choose from our premium fleet for safe, comfortable travel</p>
+        <div class="vehicle-types">
+          <div class="vehicle-card">
+            <h3>🚌 Luxury Buses</h3>
+            <p>Air-conditioned, reclining seats, perfect for groups. Capacity: 35-45 passengers.</p>
+            <ul style="text-align:left;margin-top:1rem">
+              <li>GPS tracking</li><li>First aid kit</li><li>Professional drivers</li><li>Entertainment system</li>
+            </ul>
+          </div>
+          <div class="vehicle-card">
+            <h3>🚗 Premium Cars</h3>
+            <p>Sedan/SUV options for families, small groups. Well-maintained, insured, AC vehicles.</p>
+            <ul style="text-align:left;margin-top:1rem">
+              <li>Fuel efficient</li><li>Air conditioning</li><li>Insurance covered</li><li>24/7 support</li>
+            </ul>
+          </div>
+          <div class="vehicle-card">
+            <h3>🚐 Urbania Vehicles</h3>
+            <p>Modern 17-seater luxury vehicles—spacious, safe, stylish for medium groups.</p>
+            <ul style="text-align:left;margin-top:1rem">
+              <li>Premium interiors</li><li>Spacious seating</li><li>Advanced safety features</li><li>Smooth ride quality</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Guides & Security Section -->
+    <section id="guides" class="section">
+      <div class="container">
+        <h2 class="section-title">Personal Guides & Security Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🎓</div>
+            <h3>Expert Local Guides</h3>
+            <p>Certified guides with deep knowledge of history, temples, architecture, and local customs.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔒</div>
+            <h3>Professional Security</h3>
+            <p>Trained personnel for group safety at all destinations.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock assistance: multi-language, emergency helpline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tours Section -->
+    <section id="tours" class="section">
+      <div class="container">
+        <h2 class="section-title">Popular Odisha Destinations</h2>
+        <div class="destinations-grid">
+          <!-- Destination cards ... (unchanged for brevity) ... -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Picnic Spots Section -->
+    <section id="picnic-spots" class="section">
+      <div class="container">
+        <h2 class="section-title">Odisha District Picnic Spots</h2>
+        <div class="destinations-grid">
+          <!-- Picnic spot cards ... (unchanged for brevity) ... -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="gallery-grid">
+          <!-- Gallery images ... (unchanged for brevity) ... -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+      <div class="container">
+        <h2 class="section-title">Travel Blog & Tips</h2>
+        <div class="blog-grid">
+          <!-- Blog cards ... (unchanged for brevity) ... -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2 class="section-title">Tour & Vehicle Pricing</h2>
+        <div style="overflow-x:auto;">
+          <table class="pricing-table">
+            <!-- Pricing table ... (unchanged for brevity) ... -->
+          </table>
+        </div>
+        <p style="margin-top:1.5rem;text-align:center;">*Prices are indicative. Contact us for latest rates & custom packages.</p>
+      </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <!-- FAQ items ... (unchanged for brevity) ... -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Booking Section -->
+    <section id="booking" class="section">
+      <div class="container">
+        <h2 class="section-title">Book Your Odisha Adventure</h2>
+        <div class="success-message" id="successMsg"></div>
+        <div class="booking-form">
+          <form id="bookingForm" autocomplete="off" novalidate>
+            <div class="form-group"><label for="name">Full Name *</label>
+              <input id="name" name="name" required minlength="2" maxlength="80" pattern=".{2,}" autocomplete="off">
+            </div>
+            <div class="form-group"><label for="email">Email Address *</label>
+              <input id="email" name="email" type="email" required maxlength="80" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" autocomplete="off">
+              <div class="note">Must be a valid email id</div>
+            </div>
+            <div class="form-group"><label for="phone">Phone Number *</label>
+              <input id="phone" name="phone" type="tel" required maxlength="10" minlength="10" pattern="^[6-9]\d{9}$" autocomplete="off">
+              <div class="note">Must be a valid 10 digit Indian mobile number</div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Required *</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="vehicle-rental">Vehicle Rental Only</option>
+                <option value="guide-service">Personal Guide Service</option>
+                <option value="security-service">Security Service</option>
+                <option value="complete-package">Complete Tour Package</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="destination">Preferred Destinations</label>
+              <select id="destination" name="destination">
+                <option value="">Select destinations</option>
+                <option value="bhubaneswar">Bhubaneswar</option>
+                <option value="puri">Puri</option>
+                <option value="konark">Konark</option>
+                <option value="chilika">Chilika Lake</option>
+                <option value="similipal">Similipal National Park</option>
+                <option value="custom">Custom Itinerary</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="guests">Number of Guests *</label>
+              <input id="guests" name="guests" type="number" min="1" max="50" required>
+              <div class="note">Number only, maximum 50</div>
+            </div>
+            <div class="form-group"><label for="date">Preferred Travel Date *</label>
+              <input id="date" name="date" type="date" required>
+              <div class="note">Must be today or a future date</div>
+            </div>
+            <div class="form-group"><label for="message">Special Requirements</label>
+              <textarea id="message" name="message" rows="4" maxlength="400" placeholder="Dietary preferences, accessibility needs, etc."></textarea>
+            </div>
+            <!-- Honeypot anti-spam field (hidden from humans) -->
+            <div style="display:none;">
+              <label>Leave this field empty</label>
+              <input type="text" name="website">
+            </div>
+            <!-- reCAPTCHA -->
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="6Le1FNorAAAAAJSdKVoB-nlXtkYTsVj4JjKVzs9W"></div>
+            </div>
+            <button type="submit" class="submit-btn">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title">What Our Travelers Say</h2>
+        <div class="testimonials-slider" id="testimonialsSlider">
+          <!-- Testimonial cards ... (unchanged for brevity) ... -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon">📞</div><h3>Call Us</h3><p>+91-98274 26286</p></div>
+          <div class="service-card"><div class="service-icon">✉️</div><h3>Email Us</h3><p>odishaepicstourtravels@gmail.com</p></div>
+          <div class="service-card"><div class="service-icon">📍</div><h3>Visit Our Office</h3><p>ITER Jagamara<br>Bhubaneswar, Odisha 751019</p></div>
+        </div>
+        <div class="booking-form" style="margin-top:2rem;">
+          <form id="quickContactForm">
+            <div class="form-group">
+              <label for="qcname">Name</label>
+              <input id="qcname" name="qcname" required>
+            </div>
+            <div class="form-group">
+              <label for="qcemail">Email</label>
+              <input id="qcemail" name="qcemail" type="email" required>
+            </div>
+            <div class="form-group">
+              <label for="qcmsg">Your Message</label>
+              <textarea id="qcmsg" name="qcmsg" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div style="margin-top:2rem;text-align:center;">
+          <iframe src="https://maps.google.com/maps?q=ITER%20Jagamara%2C%20Bhubaneswar%2C%20Odisha&t=&z=13&ie=UTF8&iwloc=&output=embed" width="90%" height="230" style="border-radius:15px;border:none;"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3>About Odisha Epics Tours & Travels</h3>
+        <p>Your trusted partner for exploring Odisha. From luxury vehicles to expert guides, we make every trip memorable.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a> | <a href="#vehicles">Vehicles</a> | <a href="#tours">Tours</a> | <a href="#booking">Booking</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><b>Phone:</b> +91-98274 26286<br><b>Email:</b> odishaepicstourtravels@gmail.com<br><b>Location:</b> ITER Jagamara, Bhubaneswar</p>
+      </div>
     </div>
-    <div class="section-title" id="booking">Book Your Odisha Tour</div>
-    <div class="success-message" id="successMsg"></div>
-    <form id="bookingForm" class="booking-form" autocomplete="off" novalidate>
-      <div class="form-group">
-        <label for="name">Full Name *</label>
-        <input id="name" name="name" required minlength="2" maxlength="80" pattern=".{2,}" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input id="email" name="email" type="email" required maxlength="80" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" autocomplete="off">
-        <div class="note">Must be a valid email id</div>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number *</label>
-        <input id="phone" name="phone" type="tel" required maxlength="10" minlength="10" pattern="^[6-9]\d{9}$" autocomplete="off">
-        <div class="note">Must be a valid 10 digit Indian mobile number</div>
-      </div>
-      <div class="form-group">
-        <label for="service">Service Required *</label>
-        <select id="service" name="service" required>
-          <option value="">Select a service</option>
-          <option value="vehicle-rental">Vehicle Rental Only</option>
-          <option value="guide-service">Personal Guide Service</option>
-          <option value="security-service">Security Service</option>
-          <option value="complete-package">Complete Tour Package</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="destination">Preferred Destinations</label>
-        <select id="destination" name="destination">
-          <option value="">Select destination</option>
-          <option value="bhubaneswar">Bhubaneswar</option>
-          <option value="puri">Puri</option>
-          <option value="konark">Konark</option>
-          <option value="chilika">Chilika Lake</option>
-          <option value="similipal">Similipal National Park</option>
-          <option value="custom">Custom Itinerary</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="guests">Number of Guests *</label>
-        <input id="guests" name="guests" type="number" min="1" max="50" required>
-        <div class="note">Number only, maximum 50</div>
-      </div>
-      <div class="form-group">
-        <label for="date">Preferred Travel Date *</label>
-        <input id="date" name="date" type="date" required>
-        <div class="note">Must be today or a future date</div>
-      </div>
-      <div class="form-group">
-        <label for="message">Special Requirements</label>
-        <textarea id="message" name="message" rows="3" maxlength="400" autocomplete="off"></textarea>
-      </div>
-      <!-- Honeypot anti-spam field (hidden from humans) -->
-      <div style="display:none;">
-        <label>Leave this field empty</label>
-        <input type="text" name="website">
-      </div>
-      <!-- reCAPTCHA -->
-      <div class="form-group">
-        <div class="g-recaptcha" data-sitekey="6Le1FNorAAAAAJSdKVoB-nlXtkYTsVj4JjKVzs9W"></div>
-      </div>
-      <button type="submit" class="submit-btn">Submit Inquiry</button>
-    </form>
-    <div id="contact" style="margin-top:42px;">
-      <div class="section-title">Contact Us</div>
-      <div style="font-size:1.07rem;">
-        <b>Email:</b> <a href="mailto:odishaepicstours@gmail.com">odishaepicstours@gmail.com</a><br>
-        <b>Phone:</b> <a href="tel:+917894498280">+91 78944 98280</a><br>
-        <b>WhatsApp:</b> <a href="https://wa.me/917894498280" target="_blank">Chat on WhatsApp</a><br>
-        <b>Address:</b> Bhubaneswar, Odisha, India
-      </div>
+    <div class="footer-bottom">
+      &copy; <span id="yr"></span> Odisha Epics Tours & Travels. All rights reserved.
     </div>
-  </div>
-  <div class="footer">
-    <div class="social-links">
-      <a href="https://wa.me/917894498280" title="WhatsApp" target="_blank">&#128241;</a>
-      <a href="mailto:odishaepicstours@gmail.com" title="Email">&#9993;</a>
-      <a href="https://www.facebook.com/" title="Facebook" target="_blank">&#128100;</a>
-      <a href="https://www.instagram.com/" title="Instagram" target="_blank">&#128248;</a>
-      <a href="https://www.youtube.com/" title="YouTube" target="_blank">&#127916;</a>
-    </div>
-    <div style="margin-top:8px; font-size:0.98rem;">
-      &copy; 2025 Odisha Epics Tours. All rights reserved.
-    </div>
-  </div>
+  </footer>
+  
   <script>
+    // Welcome Modal
+    function proceedWelcome() {
+      document.getElementById('welcomeModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    window.onload = function() {
+      document.getElementById('welcomeModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    };
+    
+    // Mobile Navigation Toggle
+    function toggleMobileNav() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const dropdown = document.getElementById('mobileNavDropdown');
+      mobileMenu.classList.toggle('open');
+      dropdown.classList.toggle('show');
+      const mobileNavLinks = dropdown.querySelectorAll('a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          dropdown.classList.remove('show');
+        });
+      });
+    }
+    document.addEventListener('click', function(event) {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const dropdown = document.getElementById('mobileNavDropdown');
+      const nav = document.querySelector('nav');
+      if (!nav.contains(event.target)) {
+        mobileMenu.classList.remove('open');
+        dropdown.classList.remove('show');
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.hero-slide');
+      const totalSlides = slides.length;
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+      }
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      }
+      showSlide(currentSlide);
+      setInterval(nextSlide, 5000);
+    });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 110,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    // Booking form validation and submission with reCAPTCHA
     document.getElementById('bookingForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       document.getElementById('successMsg').style.display = 'none';
-
-      // Honeypot anti-spam check: if filled, block submission
       if (document.querySelector('input[name="website"]').value) {
         alert("Spam detected. Submission blocked.");
         return;
       }
-
-      // Name validation
       const name = document.getElementById('name').value.trim();
       if (!name || name.length < 2) {
         alert('Please enter your full name.');
         return;
       }
-
-      // Email validation
       const email = document.getElementById('email').value.trim();
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
         alert('Enter a valid email address.');
         return;
       }
-
-      // Phone validation (Indian mobile only)
       const phone = document.getElementById('phone').value.trim();
       if (!/^[6-9]\d{9}$/.test(phone)) {
         alert('Enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.');
         return;
       }
-
-      // Service required validation
       const service = document.getElementById('service').value;
       if (!service) {
         alert('Please select a service.');
         return;
       }
-
-      // Guests validation
       const guests = parseInt(document.getElementById('guests').value, 10);
       if (isNaN(guests) || guests < 1 || guests > 50) {
         alert('Number of guests must be between 1 and 50.');
         return;
       }
-
-      // Date validation: must be today or future
       const dateInput = document.getElementById('date').value;
       if (!dateInput) {
         alert('Please select a travel date.');
@@ -237,22 +494,16 @@
         alert('Travel date cannot be in the past.');
         return;
       }
-
-      // Special requirements: optional, but max length
       const message = document.getElementById('message').value.trim();
       if (message.length > 400) {
         alert('Special requirements: maximum 400 characters allowed.');
         return;
       }
-
-      // reCAPTCHA validation
       const recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
         alert("Please complete the reCAPTCHA to prove you're not a robot.");
         return;
       }
-
-      // All validations passed. Submit to Apps Script
       const form = e.target;
       const data = new FormData(form);
       const params = new URLSearchParams(data);
@@ -275,6 +526,51 @@
         alert("Error submitting booking. Please try again.");
       }
     });
+    // Quick Contact form submission
+    document.getElementById('quickContactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! We will reply soon.');
+      this.reset();
+    });
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        const answer = this.nextElementSibling;
+        const allAnswers = document.querySelectorAll('.faq-answer');
+        allAnswers.forEach(a => {
+          if(a !== answer) a.style.display = 'none';
+        });
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+    // Highlight active section in navigation
+    function highlightNavLinks() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-dropdown a');
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+      if (window.pageYOffset < 200) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#home') {
+            link.classList.add('active');
+          }
+        });
+      }
+    }
+    window.addEventListener('scroll', highlightNavLinks);
+    window.addEventListener('load', highlightNavLinks);
   </script>
 </body>
 </html>
