@@ -184,7 +184,8 @@
       <div class="container">
         <h2 class="section-title">Popular Odisha Destinations</h2>
         <div class="destinations-grid">
-          <!-- ...Destination cards as in your earlier file... -->
+          <!-- 9 destination cards, as in your original file -->
+          <!-- ...All 9 cards go here... -->
         </div>
       </div>
     </section>
@@ -194,7 +195,7 @@
       <div class="container">
         <h2 class="section-title">Odisha District Picnic Spots</h2>
         <div class="destinations-grid">
-          <!-- ...Picnic spot cards as in your earlier file... -->
+          <!-- All 30 district picnic spot cards from your original file go here -->
         </div>
       </div>
     </section>
@@ -219,7 +220,7 @@
       <div class="container">
         <h2 class="section-title">Travel Blog & Tips</h2>
         <div class="blog-grid">
-          <!-- ...Blog cards as in your earlier file... -->
+          <!-- All blog cards as in your original file -->
         </div>
       </div>
     </section>
@@ -230,7 +231,7 @@
         <h2 class="section-title">Tour & Vehicle Pricing</h2>
         <div style="overflow-x:auto;">
           <table class="pricing-table">
-            <!-- ...Pricing rows as in your earlier file... -->
+            <!-- All pricing rows as in your original file -->
           </table>
         </div>
         <p style="margin-top:1.5rem;text-align:center;">*Prices are indicative. Contact us for latest rates & custom packages.</p>
@@ -242,7 +243,7 @@
       <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-list">
-          <!-- ...FAQ items as in your earlier file... -->
+          <!-- All FAQ items as in your original file -->
         </div>
       </div>
     </section>
@@ -292,7 +293,7 @@
       <div class="container">
         <h2 class="section-title">What Our Travelers Say</h2>
         <div class="testimonials-slider" id="testimonialsSlider">
-          <!-- ...Testimonials as in your earlier file... -->
+          <!-- All testimonials as in your original file -->
         </div>
       </div>
     </section>
@@ -370,6 +371,7 @@
       mobileMenu.classList.toggle('open');
       dropdown.classList.toggle('show');
       
+      // Close dropdown when clicking on nav links
       const mobileNavLinks = dropdown.querySelectorAll('a');
       mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -379,10 +381,12 @@
       });
     }
     
+    // Close mobile nav when clicking outside
     document.addEventListener('click', function(event) {
       const mobileMenu = document.getElementById('mobileMenu');
       const dropdown = document.getElementById('mobileNavDropdown');
       const nav = document.querySelector('nav');
+      
       if (!nav.contains(event.target)) {
         mobileMenu.classList.remove('open');
         dropdown.classList.remove('show');
@@ -394,15 +398,18 @@
       let currentSlide = 0;
       const slides = document.querySelectorAll('.hero-slide');
       const totalSlides = slides.length;
+      
       function showSlide(index) {
         slides.forEach((slide, i) => {
           slide.classList.toggle('active', i === index);
         });
       }
+      
       function nextSlide() {
         currentSlide = (currentSlide + 1) % totalSlides;
         showSlide(currentSlide);
       }
+      
       showSlide(currentSlide);
       setInterval(nextSlide, 5000);
     });
@@ -457,9 +464,13 @@
       question.addEventListener('click', function() {
         const answer = this.nextElementSibling;
         const allAnswers = document.querySelectorAll('.faq-answer');
+        
+        // Close all other answers
         allAnswers.forEach(a => {
           if(a !== answer) a.style.display = 'none';
         });
+        
+        // Toggle current answer
         answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
       });
     });
@@ -468,19 +479,24 @@
     function highlightNavLinks() {
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-dropdown a');
+      
       let current = '';
+      
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
         if (window.pageYOffset >= sectionTop) {
           current = section.getAttribute('id');
         }
       });
+      
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
       });
+      
+      // Handle home section separately
       if (window.pageYOffset < 200) {
         navLinks.forEach(link => {
           link.classList.remove('active');
@@ -490,6 +506,8 @@
         });
       }
     }
+    
+    // Add scroll event listener for navigation highlighting
     window.addEventListener('scroll', highlightNavLinks);
     window.addEventListener('load', highlightNavLinks);
   </script>
